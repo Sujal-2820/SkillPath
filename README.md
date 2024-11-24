@@ -41,15 +41,30 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
 ## Screenshots
 
 ### Onboarding Flow
-![Onboarding Flow](img/readme/onboarding.png)
+![Onboarding Flow1](img/readme/onboarding1.png)
+<br/>
+![Onboarding Flow2](img/readme/onboarding2.png)
+<br/>
+![Onboarding Flow3](img/readme/onboarding3.png)
+<br/><br/>
+
 
 ### Course Recommendation
 ![Course Recommendation](img/readme/course-recommendation.png)
+<br/><br/>
 
 ### Module Progress and Feedback
-![Module Progress](img/readme/module-progress.png)
+![Module Progress](img/readme/module-list2.png)
+<br/><br/>
+
+### Module Images
+![Module Image1](img/readme/module.png)
+<br/>
+![Module Image2](img/readme/module2.png)
+
 
 ---
+
 
 ## Installation and Setup
 
