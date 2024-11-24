@@ -1,0 +1,172 @@
+{
+    
+      "title": "Building Scalable Web Applications with Node.js and Express.js",
+      "description": "This module introduces you to the core concepts of Node.js and Express.js for building scalable web applications. You'll learn how to set up an Express server, handle routes, manage middleware, interact with databases, and implement user authentication.",
+      "content": [
+        {
+          "subheading": "Introduction to Node.js and Express.js",
+          "text": "Node.js is a JavaScript runtime built on Chrome's V8 engine, allowing you to run JavaScript on the server side. Express.js is a web framework for Node.js, simplifying the process of creating robust and scalable web applications.",
+          "key_points": [
+            "Node.js provides non-blocking, event-driven architecture for building high-performance applications.",
+            "Express.js is a minimal and flexible framework for building web and mobile applications.",
+            "Using Node.js and Express together streamlines the development of server-side applications."
+          ]
+        },
+        {
+          "subheading": "Setting Up the Development Environment",
+          "text": "Before starting, you need to set up your development environment to work with Node.js and Express.",
+          "steps": [
+            {
+              "step": "1. Install Node.js",
+              "description": "Download and install Node.js from the official website (https://nodejs.org).",
+              "additional_text": "Ensure you have Node.js version 14 or higher."
+            },
+            {
+              "step": "2. Initialize a New Node.js Project",
+              "code_example": "mkdir my-express-app \n cd my-express-app \n npm init -y",
+              "additional_text": "This creates a new directory for your project and initializes a Node.js project with a default package.json."
+            },
+            {
+              "step": "3. Install Express.js",
+              "code_example": "npm install express",
+              "additional_text": "This installs Express.js and adds it to your project's dependencies."
+            }
+          ]
+        },
+        {
+          "subheading": "Creating a Basic Express Server",
+          "text": "Let's start by creating a simple Express server that listens for HTTP requests and sends responses.",
+          "steps": [
+            {
+              "step": "1. Create a New Server File",
+              "code_example": "const express = require('express'); \nconst app = express(); \napp.get('/', (req, res) => { res.send('Hello, World!'); }); \napp.listen(3000, () => console.log('Server is running on port 3000'));",
+              "additional_text": "This code creates a basic Express server that listens on port 3000 and responds with 'Hello, World!' when accessed."
+            },
+            {
+              "step": "2. Run the Server",
+              "code_example": "node server.js",
+              "additional_text": "Use this command to run your server. Access the server in your browser at http://localhost:3000."
+            }
+          ]
+        },
+        {
+          "subheading": "Routing in Express.js",
+          "text": "Routing refers to how an application's endpoints (URIs) respond to client requests. Express provides a powerful and flexible routing mechanism.",
+          "steps": [
+            {
+              "step": "1. Define Basic Routes",
+              "code_example": "app.get('/about', (req, res) => { res.send('About Page'); }); \napp.post('/submit', (req, res) => { res.send('Form Submitted'); });",
+              "additional_text": "This code defines two routes: a GET route for the '/about' page and a POST route for form submissions."
+            },
+            {
+              "step": "2. Use Route Parameters",
+              "code_example": "app.get('/user/:id', (req, res) => { \nconst userId = req.params.id; \nres.send(`User ID: ${userId}`); });",
+              "additional_text": "This route accepts a dynamic user ID as a parameter and responds with the user ID."
+            },
+            {
+              "step": "3. Group Routes Using Router",
+              "code_example": "const router = express.Router(); \nrouter.get('/profile', (req, res) => { \nres.send('User Profile'); }); \napp.use('/user', router);",
+              "additional_text": "This code groups routes under '/user', simplifying the organization of your routes."
+            }
+          ]
+        },
+        {
+          "subheading": "Understanding Middleware in Express",
+          "text": "Middleware functions are functions that have access to the request object, response object, and the next function in the request-response cycle. Middleware can modify the request and response objects, end the request-response cycle, or call the next middleware function.",
+          "steps": [
+            {
+              "step": "1. Use Built-In Middleware",
+              "code_example": "app.use(express.json()); app.use(express.urlencoded({ extended: true }));",
+              "additional_text": "This middleware allows you to parse incoming request bodies, such as JSON and URL-encoded data."
+            },
+            {
+              "step": "2. Create Custom Middleware",
+              "code_example": "app.use((req, res, next) => { console.log(`Request URL: ${req.url}`); next(); });",
+              "additional_text": "This custom middleware logs the URL of each incoming request and passes control to the next middleware function."
+            },
+            {
+              "step": "3. Apply Middleware to Specific Routes",
+              "code_example": "const authMiddleware = (req, res, next) => { if (!req.headers.authorization) { return res.status(403).send('Unauthorized'); } next(); }; app.get('/dashboard', authMiddleware, (req, res) => { res.send('Welcome to the dashboard'); });",
+              "additional_text": "This middleware checks for an authorization header before allowing access to the '/dashboard' route."
+            }
+          ]
+        },
+        {
+          "subheading": "Connecting to a Database with Mongoose",
+          "text": "Express works well with databases, and MongoDB is commonly used with Node.js applications. Mongoose is an Object Data Modeling (ODM) library for MongoDB, allowing you to interact with the database using JavaScript objects.",
+          "steps": [
+            {
+              "step": "1. Install Mongoose",
+              "code_example": "npm install mongoose",
+              "additional_text": "This command installs Mongoose, which helps in modeling your MongoDB data."
+            },
+            {
+              "step": "2. Connect to MongoDB",
+              "code_example": "const mongoose = require('mongoose'); mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });",
+              "additional_text": "This code establishes a connection to a MongoDB database hosted locally."
+            },
+            {
+              "step": "3. Define a Mongoose Schema and Model",
+              "code_example": "const TaskSchema = new mongoose.Schema({ title: String, completed: Boolean }); const Task = mongoose.model('Task', TaskSchema);",
+              "additional_text": "This schema defines the structure of a 'Task' in the database, including fields like 'title' and 'completed'."
+            },
+            {
+              "step": "4. Create and Fetch Data from MongoDB",
+              "code_example": "app.post('/tasks', async (req, res) => { const newTask = new Task(req.body); await newTask.save(); res.send('Task saved'); }); app.get('/tasks', async (req, res) => { const tasks = await Task.find(); res.json(tasks); });",
+              "additional_text": "These routes allow you to create and retrieve tasks from the MongoDB database."
+            }
+          ]
+        },
+        {
+          "subheading": "Handling Authentication and Authorization",
+          "text": "Authentication verifies a user’s identity, while authorization determines their level of access. You will implement a simple authentication system using JSON Web Tokens (JWT).",
+          "steps": [
+            {
+              "step": "1. Install Required Packages",
+              "code_example": "npm install jsonwebtoken bcryptjs",
+              "additional_text": "These packages are used for generating JWT tokens and hashing passwords, respectively."
+            },
+            {
+              "step": "2. Implement User Registration",
+              "code_example": "const bcrypt = require('bcryptjs'); app.post('/register', async (req, res) => { const hashedPassword = await bcrypt.hash(req.body.password, 10); const user = new User({ username: req.body.username, password: hashedPassword }); await user.save(); res.send('User registered'); });",
+              "additional_text": "This endpoint hashes the user's password before saving it to the database."
+            },
+            {
+              "step": "3. Implement User Login and JWT Token Generation",
+              "code_example": "const jwt = require('jsonwebtoken'); app.post('/login', async (req, res) => { const user = await User.findOne({ username: req.body.username }); if (!user || !(await bcrypt.compare(req.body.password, user.password))) { return res.status(401).send('Invalid credentials'); } const token = jwt.sign({ userId: user._id }, 'your_jwt_secret'); res.json({ token }); });",
+              "additional_text": "This endpoint verifies the user's credentials and generates a JWT token if the login is successful."
+            },
+            {
+              "step": "4. Protect Routes with JWT",
+              "code_example": "const authMiddleware = (req, res, next) => { const token = req.headers.authorization.split(' ')[1]; jwt.verify(token, 'your_jwt_secret', (err, user) => { if (err) return res.status(403).send('Forbidden'); req.user = user; next(); }); }; app.get('/protected', authMiddleware, (req, res) => { res.send('Access granted to protected route'); });",
+              "additional_text": "This middleware verifies the JWT token and allows access to protected routes."
+            }
+          ]
+        },
+        {
+          "subheading": "Testing Your Application",
+          "text": "Testing is an essential part of the development process. You can manually test your endpoints using tools like Postman or automated testing frameworks like Mocha and Chai.",
+          "steps": [
+            {
+              "step": "1. Use Postman for API Testing",
+              "additional_text": "Postman allows you to send HTTP requests to your Express app and inspect the responses."
+            },
+            {
+              "step": "2. Write Automated Tests",
+              "code_example": "const request = require('supertest'); const app = require('../server'); describe('GET /', () => { it('responds with Hello, World!', (done) => { request(app).get('/').expect('Hello, World!', done); }); });",
+              "additional_text": "This code snippet shows a simple test for the root route using the Supertest library."
+            }
+          ]
+        },
+        {
+          "subheading": "Conclusion",
+          "text": "In this module, you learned how to build a scalable web application using Node.js and Express.js. By covering topics like routing, middleware, authentication, and database interaction, you now have a solid foundation for building more complex server-side applications.",
+          "key_points": [
+            "Node.js and Express.js provide powerful tools for building web applications.",
+            "Middleware is crucial for handling requests, responses, and application logic.",
+            "Authentication and authorization protect your routes and manage user access."
+          ]
+        }
+      ]
+  }
+  

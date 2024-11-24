@@ -1,0 +1,139 @@
+{
+      "title": "Database Integration: MongoDB with Node.js",
+      "description": "This module teaches how to use MongoDB, a NoSQL database, with a Node.js application. You will learn how to set up MongoDB, connect to it using Node.js, and perform simple database actions like saving and reading data.",
+      "video_link": [
+        {
+          "text": "MongoDB Basics",
+          "url": "https://www.youtube.com/watch?v=EE8ZTQxa0AM"
+        }
+      ],
+      "content": [
+        {
+          "subheading": "What is MongoDB?",
+          "text": "MongoDB is a database that stores data in a flexible way, different from traditional SQL databases like MySQL. Instead of storing data in rows and columns, MongoDB stores it in documents like JSON.",
+          "additional_text": "This means that MongoDB can easily store any kind of data without needing to follow strict rules like SQL databases.",
+          "key_points": [
+            "NoSQL database: Does not follow a table-like structure.",
+            "Document-based: Stores data as JSON-like documents."
+          ],
+          "video_link": [
+            {
+              "text": "Understanding MongoDB",
+              "url": "https://www.youtube.com/watch?v=bxsemcrY4gQ"
+            }
+          ]
+        },
+        {
+          "subheading": "Setting Up MongoDB and Mongoose",
+          "text": "MongoDB can be installed on your computer or used in the cloud. For easy integration with Node.js, we use a tool called Mongoose that helps in connecting MongoDB to our app.",
+          "steps": [
+            {
+              "step": "1. To install MongoDB locally, follow the guide at (https://docs.mongodb.com/manual/installation/), or use the free cloud service MongoDB Atlas (https://www.mongodb.com/cloud/atlas).",
+              "description": "MongoDB Atlas is easier for beginners because it doesn't require setting up anything on your computer."
+            },
+            {
+              "step": "2. Install Mongoose in your Node.js project by running:",
+              "code_example": "npm install mongoose",
+              "description": "Mongoose makes it simple to talk to MongoDB from Node.js."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Installing MongoDB and Mongoose",
+              "url": "https://www.youtube.com/watch?v=Eo-ykm1Fjzk"
+            }
+          ]
+        },
+        {
+          "subheading": "Connecting to MongoDB",
+          "text": "After setting up MongoDB and Mongoose, you can now connect your app to the database. This code shows how to connect to a MongoDB database using Mongoose.",
+          "steps": [
+            {
+              "step": "1. In your main `app.js` or `server.js` file, use this code to connect:",
+              "code_example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost:27017/myapp', {\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n}).then(() => {\n  console.log('Connected to MongoDB');\n}).catch(err => {\n  console.error('Error connecting to MongoDB', err);\n});",
+              "description": "This code connects your app to a local MongoDB server running on your computer. Replace 'myapp' with your database name."
+            },
+            {
+              "step": "2. If you're using MongoDB Atlas, your connection URL will include the username, password, and cluster details provided by Atlas."
+            }
+          ],
+          "additional_text": "Make sure MongoDB is running or your Atlas database is set up and running correctly."
+        },
+        {
+          "subheading": "Creating a Mongoose Schema",
+          "text": "A schema in Mongoose defines how your data should be structured. You can think of it as a blueprint for the data.",
+          "steps": [
+            {
+              "step": "1. Create a file named `models/User.js` and define a schema for storing user data:",
+              "code_example": "const mongoose = require('mongoose');\n\nconst UserSchema = new mongoose.Schema({\n  name: String,\n  email: String,\n  password: String\n});\n\nmodule.exports = mongoose.model('User', UserSchema);",
+              "description": "This schema defines three fields: name, email, and password for the user."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Mongoose Schema Tutorial",
+              "url": "https://www.youtube.com/watch?v=bxsemcrY4gQ"
+            }
+          ]
+        },
+        {
+          "subheading": "Performing CRUD Operations",
+          "text": "Once you have connected your app and defined the schema, you can now perform CRUD operations. CRUD stands for Create, Read, Update, and Delete.",
+          "steps": [
+            {
+              "step": "1. Create a new user document:",
+              "code_example": "const User = require('./models/User');\n\nconst newUser = new User({\n  name: 'Jane Doe',\n  email: 'jane@example.com',\n  password: 'password123'\n});\n\nnewUser.save().then(user => {\n  console.log('User saved:', user);\n}).catch(err => {\n  console.error('Error saving user:', err);\n});",
+              "description": "This code creates and saves a new user document in the database."
+            },
+            {
+              "step": "2. Read (find) all users:",
+              "code_example": "User.find().then(users => {\n  console.log('All users:', users);\n}).catch(err => {\n  console.error('Error fetching users:', err);\n});",
+              "description": "This reads all the user documents from the database."
+            },
+            {
+              "step": "3. Update a user document:",
+              "code_example": "User.findOneAndUpdate({ email: 'jane@example.com' }, { name: 'Jane Smith' }, { new: true })\n.then(user => {\n  console.log('User updated:', user);\n}).catch(err => {\n  console.error('Error updating user:', err);\n});",
+              "description": "This updates the name of the user whose email matches 'jane@example.com'."
+            },
+            {
+              "step": "4. Delete a user document:",
+              "code_example": "User.findOneAndDelete({ email: 'jane@example.com' })\n.then(result => {\n  console.log('User deleted:', result);\n}).catch(err => {\n  console.error('Error deleting user:', err);\n});",
+              "description": "This deletes the user with the specified email."
+            }
+          ],
+          "additional_text": "CRUD operations are essential for interacting with your MongoDB database."
+        },
+        {
+          "subheading": "Handling Errors and Validation",
+          "text": "Mongoose helps in validating the data before saving it to the database. For example, if you don't provide all the required fields, Mongoose will throw an error.",
+          "steps": [
+            {
+              "step": "1. If you try to save a user without an email, you'll get an error like this:",
+              "code_example": "const invalidUser = new User({ name: 'John Doe' });\n\ninvalidUser.save().catch(err => {\n  console.error('Validation error:', err.message);\n});",
+              "description": "Since email is a required field, Mongoose won't save the document, and you'll see an error."
+            }
+          ]
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What is MongoDB?",
+              "options": ["A SQL database", "A NoSQL database", "A JavaScript library", "A front-end framework"],
+              "answer": "A NoSQL database"
+            },
+            {
+              "question": "Which Mongoose method is used to save a new document to MongoDB?",
+              "options": ["find()", "save()", "connect()", "delete()"],
+              "answer": "save()"
+            },
+            {
+              "question": "What is the purpose of a schema in Mongoose?",
+              "options": ["To connect to MongoDB", "To define the structure of documents", "To install MongoDB", "To update documents"],
+              "answer": "To define the structure of documents"
+            }
+          ]
+        }
+      ]
+  }
+  

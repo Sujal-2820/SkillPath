@@ -1,0 +1,102 @@
+{
+    "title": "Building Your First Simple Web Application: Step-by-Step Guide",
+    "content": [
+      {
+        "subheading": "What is a Web Application?",
+        "text": "A web application is like a website but more interactive. Think of apps like Google Docs or Facebook, where you can do things like writing, uploading photos, or messaging friends. With a web app, users can interact by clicking buttons, filling out forms, and seeing things change on the screen. Let's build a super simple web app together!",
+        "video_link": "https://www.youtube.com/watch?v=D-h8L5hgW-w",
+        "mcq_questions": [
+          {
+            "question": "What makes a web application interactive?",
+            "options": [
+              "A) HTML",
+              "B) CSS",
+              "C) JavaScript",
+              "D) Only images"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Getting Ready: Your Project Files",
+        "text": "Before we start, you need three basic files for your web app:\n\n1. `index.html`: The structure of your web app.\n2. `style.css`: The design and look of your app.\n3. `app.js`: The interactive part where things happen when the user clicks or types.\n\nLet's create a folder for our project, and inside that folder, we'll create these three files.",
+        "code_example": [
+          {
+            "filename": "Project Structure",
+            "code": "📁 MyWebApp\n ├── index.html\n ├── style.css\n └── app.js"
+          }
+        ],
+        "additional_text": "This is how your project should look. You can create these files using any text editor, such as Visual Studio Code or even Notepad."
+      },
+      {
+        "subheading": "Step 1: Writing the Basic HTML",
+        "text": "We start with the HTML file, which gives structure to our web app. It creates the page and tells the browser what to show. Let’s write the basic HTML for a simple page that has a heading and a button.",
+        "code_example": [
+          {
+            "filename": "index.html",
+            "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My Simple Web App</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Welcome to My Web App</h1>\n  <button id=\"clickMe\">Click Me!</button>\n  <script src=\"app.js\"></script>\n</body>\n</html>"
+          }
+        ],
+        "additional_text": "This code creates a page with a heading 'Welcome to My Web App' and a clickable button. We’ll make the button do something soon!"
+      },
+      {
+        "subheading": "Step 2: Adding Some Style with CSS",
+        "text": "Next, let’s make our app look nice using CSS. CSS is used to change how things look—like colors, fonts, and spacing. We’ll make the page look clean and make the button more attractive.",
+        "code_example": [
+          {
+            "filename": "style.css",
+            "code": "body {\n  background-color: #f0f0f0;\n  text-align: center;\n  font-family: Arial, sans-serif;\n}\n\nbutton {\n  background-color: #4CAF50;\n  color: white;\n  padding: 15px 32px;\n  font-size: 16px;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background-color: #45a049;\n}"
+          }
+        ],
+        "additional_text": "This CSS code makes the background light gray and centers everything. It also makes the button green with white text, and changes color when you hover over it."
+      },
+      {
+        "subheading": "Step 3: Making the App Interactive with JavaScript",
+        "text": "Now let’s add some JavaScript to make our button work. When the user clicks the button, we’ll display a message using an alert box. JavaScript makes your app interactive—so when the user clicks, types, or moves, something happens.",
+        "code_example": [
+          {
+            "filename": "app.js",
+            "code": "document.getElementById('clickMe').addEventListener('click', function() {\n  alert('You clicked the button!');\n});"
+          }
+        ],
+        "additional_text": "This code tells the browser to show a message when the button is clicked. The `addEventListener` function listens for a 'click' on the button, and then runs the function to display the alert."
+      },
+      {
+        "subheading": "How It All Works Together",
+        "text": "Now let’s see how everything works together:\n\n1. **HTML** creates the structure and elements of your web app (like the button).\n2. **CSS** styles the elements to make them look good.\n3. **JavaScript** adds interactivity, like showing a message when the button is clicked.\n\nOpen your `index.html` file in a browser, and try clicking the button. You should see a popup message appear!"
+      },
+      {
+        "subheading": "Adding More Features to Your App",
+        "text": "Let’s add a simple input box and show a message when the user types their name. This adds another level of interactivity.",
+        "code_example": [
+          {
+            "filename": "index.html (updated)",
+            "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My Simple Web App</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Welcome to My Web App</h1>\n  <input type=\"text\" id=\"nameInput\" placeholder=\"Enter your name\">\n  <button id=\"submitName\">Submit</button>\n  <script src=\"app.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "app.js (updated)",
+            "code": "document.getElementById('submitName').addEventListener('click', function() {\n  var name = document.getElementById('nameInput').value;\n  alert('Hello, ' + name + '!');\n});"
+          }
+        ],
+        "additional_text": "Now, when you type your name in the input box and click the button, JavaScript will show a personalized greeting using the name you typed."
+      },
+      {
+        "subheading": "Wrapping Up: Building on Your Web App",
+        "text": "Congratulations! You’ve just built your first simple web application. This is just the beginning—web apps can get much more complex by adding more features like forms, images, and databases. But now you know the basics of HTML, CSS, and JavaScript!",
+        "mcq_questions":[
+          {
+            "question": "What is the purpose of the `app.listen()` method in Express.js?",
+            "options": [
+              "A) To send data to the client",
+              "B) To initialize a server to listen for incoming requests",
+              "C) To define the routes of the application",
+              "D) To connect to the database"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

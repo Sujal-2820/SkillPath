@@ -1,0 +1,146 @@
+{
+    "title": "Full Stack Web Development Project",
+    "content": [
+      {
+        "subheading": "What is Full Stack Web Development?",
+        "text": "Full stack web development involves working on both the front end and back end of a web application. The front end is what users interact with, while the back end handles the logic and database operations. A full-stack developer understands how to create a complete web application from start to finish.",
+        "additional_text": "In essence, full stack development combines several disciplines, allowing you to build everything from user interfaces to server-side logic and databases."
+      },
+      {
+        "subheading": "Project Idea: Building a Task Management App",
+        "text": "Let’s build a simple task management app where users can create, update, and delete tasks. This app will have user authentication, allowing users to register and log in to manage their tasks securely.",
+        "more_additional_text": "The app will consist of a front end built with HTML, CSS, and JavaScript, and a back end powered by Node.js with Express for handling requests and MongoDB for database management."
+      },
+      {
+        "subheading": "Setting Up Your Development Environment",
+        "text": "Before starting your project, set up your development environment:",
+        "list": [
+          {
+            "title": "Install Node.js",
+            "text": "Download and install Node.js from the official website. This will also install npm (Node Package Manager), which you will use to install packages."
+          },
+          {
+            "title": "Install MongoDB",
+            "text": "Set up a MongoDB database. You can either install it locally or use a cloud service like MongoDB Atlas."
+          },
+          {
+            "title": "Code Editor",
+            "text": "Use a code editor like Visual Studio Code, which is popular and has many useful extensions."
+          }
+        ]
+      },
+      {
+        "subheading": "Creating the Backend",
+        "text": "Start by setting up the back end of your application:",
+        "steps": [
+          {
+            "step": "1. Initialize the Project",
+            "code": "mkdir task-manager && cd task-manager\nnpm init -y",
+            "additional_text": "This command creates a new directory for your project and initializes it with a package.json file."
+          },
+          {
+            "step": "2. Install Dependencies",
+            "code": "npm install express mongoose dotenv bcryptjs jsonwebtoken",
+            "additional_text": "These packages will help you create an Express server, interact with MongoDB, manage environment variables, hash passwords, and implement JWT for authentication."
+          },
+          {
+            "step": "3. Create Server File",
+            "code": "const express = require('express');\nconst mongoose = require('mongoose');\nconst app = express();\napp.use(express.json());\n\n// Connect to MongoDB\nmongoose.connect('mongodb://localhost:27017/task-manager', { useNewUrlParser: true, useUnifiedTopology: true })\n  .then(() => console.log('MongoDB connected'))\n  .catch(err => console.error(err));\n\nconst PORT = process.env.PORT || 5000;\napp.listen(PORT, () => console.log(`Server running on port ${PORT}`));",
+            "additional_text": "This code initializes an Express server and connects to your MongoDB database."
+          }
+        ]
+      },
+      {
+        "subheading": "Creating User Authentication",
+        "text": "User authentication is crucial for security. Here’s how to implement it:",
+        "steps": [
+          {
+            "step": "1. Create User Model",
+            "code": "const mongoose = require('mongoose');\nconst userSchema = new mongoose.Schema({\n  username: { type: String, required: true },\n  password: { type: String, required: true }\n});\n\nconst User = mongoose.model('User', userSchema);\nmodule.exports = User;",
+            "additional_text": "This model defines how user data is structured in the database."
+          },
+          {
+            "step": "2. Implement Registration",
+            "code": "app.post('/api/register', async (req, res) => {\n  const { username, password } = req.body;\n  const hashedPassword = await bcrypt.hash(password, 10);\n  const user = new User({ username, password: hashedPassword });\n  await user.save();\n  res.status(201).send('User registered');\n});",
+            "additional_text": "This endpoint allows new users to register by sending their username and password."
+          },
+          {
+            "step": "3. Implement Login",
+            "code": "app.post('/api/login', async (req, res) => {\n  const { username, password } = req.body;\n  const user = await User.findOne({ username });\n  if (!user || !await bcrypt.compare(password, user.password)) {\n    return res.status(401).send('Invalid credentials');\n  }\n  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);\n  res.send({ token });\n});",
+            "additional_text": "This endpoint authenticates users and provides them with a JSON Web Token (JWT) for secure access."
+          }
+        ]
+      },
+      {
+        "subheading": "Creating Task Management Features",
+        "text": "Now that user authentication is set up, let’s create the task management features:",
+        "steps": [
+          {
+            "step": "1. Create Task Model",
+            "code": "const taskSchema = new mongoose.Schema({\n  title: { type: String, required: true },\n  completed: { type: Boolean, default: false },\n  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }\n});\n\nconst Task = mongoose.model('Task', taskSchema);\nmodule.exports = Task;",
+            "additional_text": "This model defines the structure of the tasks, linking them to users."
+          },
+          {
+            "step": "2. Create API Endpoints for Tasks",
+            "code": "app.post('/api/tasks', authenticateToken, async (req, res) => {\n  const task = new Task({ title: req.body.title, userId: req.user.id });\n  await task.save();\n  res.status(201).send(task);\n});\n\napp.get('/api/tasks', authenticateToken, async (req, res) => {\n  const tasks = await Task.find({ userId: req.user.id });\n  res.send(tasks);\n});",
+            "additional_text": "These endpoints allow users to create new tasks and fetch their existing tasks."
+          },
+          {
+            "step": "3. Implement Task Update and Delete",
+            "code": "app.patch('/api/tasks/:id', authenticateToken, async (req, res) => {\n  const task = await Task.findById(req.params.id);\n  if (!task || task.userId.toString() !== req.user.id) return res.status(403).send('Unauthorized');\n  task.completed = req.body.completed;\n  await task.save();\n  res.send(task);\n});\n\napp.delete('/api/tasks/:id', authenticateToken, async (req, res) => {\n  const task = await Task.findById(req.params.id);\n  if (!task || task.userId.toString() !== req.user.id) return res.status(403).send('Unauthorized');\n  await task.remove();\n  res.send('Task deleted');\n});",
+            "additional_text": "These endpoints allow users to update and delete their tasks, ensuring that only the owner can modify them."
+          }
+        ]
+      },
+      {
+        "subheading": "Creating the Frontend",
+        "text": "Now that the backend is ready, let's create the frontend using HTML, CSS, and JavaScript:",
+        "steps": [
+          {
+            "step": "1. Set Up HTML Structure",
+            "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Task Manager</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <div id=\"app\">\n    <h1>Task Manager</h1>\n    <form id=\"task-form\">\n      <input type=\"text\" id=\"task-title\" placeholder=\"Enter task title\" required />\n      <button type=\"submit\">Add Task</button>\n    </form>\n    <ul id=\"task-list\"></ul>\n  </div>\n  <script src=\"app.js\"></script>\n</body>\n</html>",
+            "additional_text": "This HTML code sets up the basic structure for your task management app."
+          },
+          {
+            "step": "2. Style Your App",
+            "code": "body {\n  font-family: Arial, sans-serif;\n  margin: 0;\n  padding: 20px;\n}\n\n#app {\n  max-width: 400px;\n  margin: auto;\n}\n\nform {\n  display: flex;\n  justify-content: space-between;\n}\n\nul {\n  list-style-type: none;\n  padding: 0;\n}",
+            "additional_text": "Add basic styles to your app for better aesthetics."
+          },
+          {
+            "step": "3. Implement JavaScript for Interactivity",
+            "code": "const taskForm = document.getElementById('task-form');\nconst taskList = document.getElementById('task-list');\n\ntaskForm.addEventListener('submit', async (e) => {\n  e.preventDefault();\n  const title = document.getElementById('task-title').value;\n  await fetch('/api/tasks', {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },\n    body: JSON.stringify({ title })\n  });\n  loadTasks();\n});\n\nasync function loadTasks() {\n  const response = await fetch('/api/tasks', { headers: { 'Authorization': `Bearer ${token}` } });\n  const tasks = await response.json();\n  taskList.innerHTML = tasks.map(task => `<li>${task.title}</li>`).join('');\n}\n\nloadTasks();",
+            "additional_text": "This JavaScript code handles task submission and fetching tasks from the API."
+          }
+        ]
+      },
+      {
+        "subheading": "Testing and Debugging",
+        "text": "Test your application thoroughly to ensure all features work as intended. Look for any errors in both the console and network requests. Use tools like Postman for API testing.",
+        "more_additional_text": "Make sure to handle any edge cases, such as invalid user input and network errors."
+      },
+      {
+        "subheading": "Deployment",
+        "text": "Once your application is complete and tested, it’s time to deploy it. Consider using services like Heroku for your back end and Vercel for your front end.",
+        "steps": [
+          {
+            "step": "1. Prepare Your App for Deployment",
+            "code": "npm run build",
+            "additional_text": "Ensure that your app is production-ready by building it."
+          },
+          {
+            "step": "2. Deploy to a Hosting Service",
+            "text": "Follow the hosting provider's guidelines to deploy your backend and frontend applications."
+          },
+          {
+            "step": "3. Monitor and Maintain",
+            "text": "After deployment, monitor your app for any issues and update it regularly with new features and bug fixes."
+          }
+        ]
+      },
+      {
+        "subheading": "Conclusion",
+        "text": "Building a full-stack web application is a rewarding experience. It enhances your skills in both front-end and back-end development. Continue to explore new technologies and frameworks to improve your development process."
+      }
+    ]
+  }
+  

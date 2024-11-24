@@ -1,0 +1,82 @@
+{
+    "title": "JavaScript Basics: Unlocking the Power of Web Development",
+    "content": [
+      {
+        "subheading": "Introduction to JavaScript",
+        "text": "JavaScript is a versatile programming language that enables you to create dynamic and interactive web pages. It is an essential part of web development, along with HTML and CSS. JavaScript allows you to manipulate web page content, handle events, and communicate with servers, making your web applications more engaging and user-friendly.",
+        "code_example": "// This is a simple JavaScript program that displays a greeting message\nconsole.log('Hello, World!');",
+        "additional_text": "The code snippet above uses the `console.log()` function to print 'Hello, World!' to the console. This is a common first step in learning any programming language.",
+        "video_link": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+        "mcq_questions": [
+          {
+            "question": "What does JavaScript primarily do?",
+            "options": [
+              "A) Structure content",
+              "B) Style pages",
+              "C) Make web pages interactive",
+              "D) Serve web pages"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Variables and Data Types",
+        "text": "In JavaScript, variables are used to store data values. You can declare a variable using `var`, `let`, or `const`. Each of these has its own scope and usage. JavaScript also supports different data types, including strings, numbers, booleans, objects, and arrays.",
+        "code_example": "// Declaring variables\nlet name = 'Alice';\nconst age = 30;\nvar isStudent = true;\n\nconsole.log(name); // Outputs: Alice\nconsole.log(age); // Outputs: 30\nconsole.log(isStudent); // Outputs: true",
+        "additional_text": "In this example, we declare three variables: `name`, `age`, and `isStudent`. The `let` keyword allows you to change the value of `name` later, while `const` keeps `age` constant, and `var` has function scope for `isStudent`.",
+        "video_link": "https://www.youtube.com/watch?v=Ukg_U3Cn8hA",
+        "mcq_questions": [
+          {
+            "question": "Which keyword is used to declare a variable that cannot be reassigned?",
+            "options": [
+              "A) let",
+              "B) var",
+              "C) const",
+              "D) static"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Control Structures: Conditionals and Loops",
+        "text": "Control structures are fundamental in programming, allowing you to execute different code paths based on conditions. JavaScript provides `if` statements for conditional logic and loops (like `for` and `while`) for repetitive tasks.",
+        "code_example": "// Using if-else statements\nlet score = 75;\nif (score >= 60) {\n    console.log('You passed!');\n} else {\n    console.log('You failed.');\n}\n\n// Using a for loop\nfor (let i = 1; i <= 5; i++) {\n    console.log('Count: ' + i);\n}",
+        "additional_text": "In the first code block, we check if the `score` is 60 or above to determine if the user passed or failed. The second block uses a `for` loop to count from 1 to 5, displaying each count in the console.",
+        "video_link": "https://www.youtube.com/watch?v=O5xN7aB2pG4",
+        "mcq_questions": [
+          {
+            "question": "What will be logged if the score is 50?",
+            "options": [
+              "A) You passed!",
+              "B) You failed.",
+              "C) Score is 50.",
+              "D) Count: 5"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Functions: Reusable Code Blocks",
+        "text": "Functions in JavaScript are reusable blocks of code that perform a specific task. They can take input in the form of parameters and return output. Functions help keep your code organized and reduce redundancy.",
+        "code_example": "// Function to calculate the area of a rectangle\nfunction calculateArea(length, width) {\n    return length * width;\n}\n\nlet area = calculateArea(5, 3);\nconsole.log('Area: ' + area); // Outputs: Area: 15",
+        "additional_text": "Here, we define a function called `calculateArea`, which takes `length` and `width` as parameters and returns the area. We call the function with specific values and log the result.",
+        "video_link": "https://www.youtube.com/watch?v=TLuUGuqNf0U",
+        "mcq_questions": [
+          {
+            "question": "What do functions help you achieve in programming?",
+            "options": [
+              "A) Write code faster",
+              "B) Reuse code blocks",
+              "C) Make code longer",
+              "D) Execute code only once"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,78 @@
+{
+    "title": "HTML Fundamentals: A Beginner's Guide",
+    "content": [
+      {
+        "subheading": "What is HTML?",
+        "text": "HTML is the backbone of web pages. It structures the content on the web, from text to images and videos. HTML elements tell the browser how to display content on the page. HTML files are simple text files that contain HTML tags, enclosed in angle brackets (e.g., <p>, <h1>).",
+        "code_example": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Web Page</title>\n</head>\n<body>\n    <h1>Welcome to My Website</h1>\n    <p>This is a simple paragraph.</p>\n</body>\n</html>",
+        "video_link": "https://www.youtube.com/watch?v=qz0aGYrrlhU",
+        "mcq_questions": [
+          {
+            "question": "Which tag is used to define the most important heading on a page?",
+            "options": [
+              "A) <h1>",
+              "B) <title>",
+              "C) <p>",
+              "D) <div>"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      {
+        "subheading": "HTML Tags and Attributes",
+        "text": "HTML is made up of elements, which are created using tags. Most tags come in pairs: an opening tag and a closing tag (e.g., <p> and </p> for paragraphs). HTML elements can also have attributes, which provide additional information about an element (e.g., class, id, href).",
+        "code_example": "<a href=\"https://www.example.com\" target=\"_blank\">Visit Example</a>",
+        "video_link": "https://www.youtube.com/watch?app=desktop&v=DJ0Pehp_U48",
+        "mcq_questions": [
+          {
+            "question": "Which of the following is a correct attribute in HTML?",
+            "options": [
+              "A) href=\"link.com\"",
+              "B) link=\"href.com\"",
+              "C) src=link.com",
+              "D) target!_blank"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      {
+        "subheading": "HTML Elements for Structuring Content",
+        "text": "HTML includes various elements to organize content, such as headings (<h1> to <h6>), paragraphs (<p>), and divs (<div>). These tags help create a clean layout for your web pages.",
+        "code_example": "<h2>Section Heading</h2>\n<p>This is a paragraph explaining the section. HTML lets you organize your page into sections using different heading levels and paragraph tags.</p>\n<div>\n    <p>This paragraph is inside a div, which can be used for grouping elements together.</p>\n</div>",
+        "video_link": "https://youtu.be/iYRH7iNWyCM?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "Which HTML tag is used to define a section of a web page?",
+            "options": [
+              "A) <section>",
+              "B) <p>",
+              "C) <div>",
+              "D) <article>"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "HTML Lists",
+        "text": "HTML provides two main types of lists: ordered lists (<ol>) and unordered lists (<ul>). Lists are made up of list items, defined with the <li> tag. Ordered lists display items in a specific order, while unordered lists display items with bullet points.",
+        "code_example": "<h3>Ordered List</h3>\n<ol>\n    <li>Step One</li>\n    <li>Step Two</li>\n    <li>Step Three</li>\n</ol>\n\n<h3>Unordered List</h3>\n<ul>\n    <li>Item One</li>\n    <li>Item Two</li>\n    <li>Item Three</li>\n</ul>",
+        "video_link": "https://youtu.be/oUm7rvMUNq8?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "Which tag is used to create an unordered list in HTML?",
+            "options": [
+              "A) <ol>",
+              "B) <ul>",
+              "C) <li>",
+              "D) <dl>"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,92 @@
+{
+    "title": "Introduction to Web Frameworks: Making Web Development Easy",
+    "content": [
+      {
+        "subheading": "What Are Web Frameworks?",
+        "text": "Web frameworks are tools that help people create websites. They have lots of pre-written code, which means you don’t have to write everything from the beginning. Think of them like a recipe that helps you cook a delicious meal without needing to know all the details.\n\nThere are two main types of frameworks:\n1. **Frontend Frameworks**: These deal with what you see on the website, like buttons and images. Examples include React, Angular, and Vue.js.\n2. **Backend Frameworks**: These handle the behind-the-scenes stuff, like saving your data. Examples include Express.js and Django.",
+        "video_link": "https://www.youtube.com/watch?v=pYgC4X0sW8E",
+        "mcq_questions": [
+          {
+            "question": "What is a web framework used for?",
+            "options": [
+              "A) To make food",
+              "B) To help create websites",
+              "C) To paint pictures",
+              "D) To write books"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Why Use Web Frameworks?",
+        "text": "Using web frameworks has many good things about it:\n- **Saves Time**: They come with features that let you work faster. You can finish your project sooner.\n- **Reusability**: You can use the same code in different parts of your project. This makes things easier to manage.\n- **Community Support**: Many people use popular frameworks, so there are lots of resources to help you out if you get stuck.\n- **Best Practices**: Frameworks encourage you to write clean and organized code, which is easier to read.",
+        "additional_text": "Using a web framework is like having a good friend who helps you build your website.",
+        "video_link": "https://www.youtube.com/watch?v=OC9sMbhY33o",
+        "mcq_questions": [
+          {
+            "question": "What is one benefit of using web frameworks?",
+            "options": [
+              "A) They make you write more code.",
+              "B) They help you work faster.",
+              "C) They make your website boring.",
+              "D) They increase the cost of building websites."
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "How to Choose the Right Framework",
+        "text": "Choosing a web framework can be confusing, but here are some simple tips:\n- **Think About Your Project**: What do you need? If you want a nice-looking website, a frontend framework like React might be good.\n- **How Easy Is It to Learn?**: Some frameworks are easier for beginners. If you're just starting, look for ones that are friendly and have good tutorials.\n- **Check the Community**: See if there are lots of people using it and sharing tips. This can make learning easier.",
+        "video_link": "https://www.youtube.com/watch?v=W4DbTkQ65W0",
+        "mcq_questions": [
+          {
+            "question": "What should you think about when choosing a framework?",
+            "options": [
+              "A) Your favorite color",
+              "B) The framework's popularity",
+              "C) Your project's needs and how easy it is to learn",
+              "D) How many logos the framework has"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Getting Started with Frameworks",
+        "text": "Here’s how to start using web frameworks:\n1. **Pick a Framework**: Choose one based on what you want to build.\n2. **Learn the Basics**: Find free courses or videos online. Websites like freeCodeCamp are great for beginners.\n3. **Build a Simple Project**: Try creating something small, like a personal blog or a simple game. This helps you practice.\n4. **Ask for Help**: If you get stuck, don’t worry! You can ask questions in online forums or communities.",
+        "video_link": "https://www.youtube.com/watch?v=9X84VVsVhHk",
+        "mcq_questions": [
+          {
+            "question": "What is one of the first steps to take when learning a new framework?",
+            "options": [
+              "A) Build a complicated website",
+              "B) Find free courses to learn the basics",
+              "C) Ignore the documentation",
+              "D) Write your own framework from scratch"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Conclusion: Have Fun Building Websites!",
+        "text": "Web frameworks can make creating websites much easier and more fun. They give you the tools you need to build amazing applications. So, don’t be afraid to explore different frameworks, start learning, and enjoy making your own websites!",
+        "video_link": "https://www.youtube.com/watch?v=IY3z0GQ8v_M",
+        "mcq_questions": [
+          {
+            "question": "What is the main purpose of using web frameworks?",
+            "options": [
+              "A) To help create websites more easily",
+              "B) To slow down website loading times",
+              "C) To limit your creativity",
+              "D) To make coding harder"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      }
+    ]
+  }
+  

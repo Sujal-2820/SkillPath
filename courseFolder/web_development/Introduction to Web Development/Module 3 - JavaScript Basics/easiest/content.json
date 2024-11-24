@@ -1,0 +1,116 @@
+{
+    "title": "JavaScript Basics: Your First Steps into Programming",
+    "content": [
+      {
+        "subheading": "What is JavaScript?",
+        "text": "JavaScript is a programming language that is primarily used to make web pages interactive and dynamic. It allows you to create features like image sliders, pop-up messages, and even games. Without JavaScript, web pages would be static, meaning they wouldn’t change or respond to user actions. JavaScript works in your web browser, which means you can run it without needing any special software.",
+        "video_link": "https://www.youtube.com/watch?v=HLn6GmIhG1M",
+        "mcq_questions": [
+          {
+            "question": "What is JavaScript used for?",
+            "options": [
+              "A) To structure web pages",
+              "B) To style web pages",
+              "C) To make web pages interactive",
+              "D) To create images"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Getting Started with Variables",
+        "text": "Variables are like labeled boxes that hold information. You can store different types of data in variables, such as numbers, words, or even lists. In JavaScript, you can create a variable using three keywords: `let`, `const`, and `var`. \n- **let**: You can change the value of a variable later.\n- **const**: This is used for variables that should not change after being set.\n- **var**: This is an older way to declare variables and has some different rules about where they can be used.",
+        "code_example": "// Creating variables\nlet myName = 'Alice'; // A variable that can change\nconst myAge = 25; // A variable that cannot change\nvar isStudent = true; // An older way to declare a variable\n\n// Displaying variables\nconsole.log(myName); // Outputs: Alice\nconsole.log(myAge); // Outputs: 25\nconsole.log(isStudent); // Outputs: true",
+        "additional_text": "In the code example, `myName` is a variable that can change if we want to update it later. `myAge` is a constant that we set to 25 and cannot be changed. `isStudent` is a variable that tells us if the person is a student. The `console.log()` function is used to display the values of these variables in the browser's console.",
+        "video_link": "https://www.youtube.com/watch?v=4JS54L3dbJw",
+        "mcq_questions": [
+          {
+            "question": "Which keyword is used to declare a variable that cannot be changed?",
+            "options": [
+              "A) let",
+              "B) var",
+              "C) const",
+              "D) all of them"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Understanding Data Types",
+        "text": "JavaScript has different types of data, which help us store information in a meaningful way. Here are some common data types you will use:\n- **String**: A sequence of characters (like words or sentences) wrapped in quotes, e.g., 'Hello, world!'\n- **Number**: Numeric values, such as 42 or 3.14. Numbers can be whole or decimal.\n- **Boolean**: A data type that can only be true or false. This is useful for making decisions in your code.\n- **Object**: A collection of key-value pairs, similar to a real-life object. For example, you can represent a person with an object that includes their name and age.\n- **Array**: A list of items stored in a single variable. You can think of it as a box that can hold several things, like numbers or strings.",
+        "code_example": "// Different data types\nlet greeting = 'Hello, World!'; // String\nlet count = 10; // Number\nlet isActive = true; // Boolean\nlet user = {name: 'Alice', age: 25}; // Object\nlet colors = ['red', 'green', 'blue']; // Array\n\n// Displaying data types\nconsole.log(greeting); // Outputs: Hello, World!\nconsole.log(count); // Outputs: 10\nconsole.log(isActive); // Outputs: true\nconsole.log(user); // Outputs: {name: 'Alice', age: 25}\nconsole.log(colors); // Outputs: ['red', 'green', 'blue']",
+        "additional_text": "In this example, we have created variables for each data type. When we use `console.log()`, it displays the value of the variable in the console. Understanding data types is crucial because it helps you know what kind of data you are working with, which in turn affects how you use it in your programs.",
+        "video_link": "https://www.youtube.com/watch?v=1Rg64LyfL9E",
+        "mcq_questions": [
+          {
+            "question": "Which of the following is a string?",
+            "options": [
+              "A) 123",
+              "B) 'Hello'",
+              "C) true",
+              "D) {name: 'Alice'}"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Control Flow: Making Decisions",
+        "text": "Control flow is a concept that allows your program to make decisions based on conditions. This means that your code can behave differently depending on whether a condition is true or false. The most common way to implement control flow is with `if` statements. Additionally, you can use loops to repeat actions multiple times.\n- **If statement**: Executes a block of code if a specified condition is true.\n- **For loop**: Allows you to run a block of code multiple times with a counter.",
+        "code_example": "// If statement example\nlet score = 85;\nif (score >= 60) {\n    console.log('You passed!');\n} else {\n    console.log('You failed.');\n}\n\n// For loop example\nfor (let i = 1; i <= 5; i++) {\n    console.log('Count: ' + i);\n}",
+        "additional_text": "In the first code example, we check if the `score` variable is greater than or equal to 60. If it is, we log 'You passed!' to the console. If not, we log 'You failed.'. The second code example uses a `for` loop to count from 1 to 5 and log each number to the console. Loops are helpful when you need to repeat a task without writing the same code multiple times.",
+        "video_link": "https://www.youtube.com/watch?v=wo38E2K7twk",
+        "mcq_questions": [
+          {
+            "question": "What will be logged if the score is 50?",
+            "options": [
+              "A) You passed!",
+              "B) You failed.",
+              "C) Score is 50.",
+              "D) Count: 5"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Functions: Reusing Code",
+        "text": "Functions are blocks of code designed to perform a specific task. They help you keep your code organized and allow you to reuse code without rewriting it. You define a function with a name, specify any inputs it might need (called parameters), and write the code that it will execute. To use the function, you simply call it by its name.",
+        "code_example": "// Function to greet someone\nfunction greet(name) {\n    return 'Hello, ' + name + '!';\n}\n\nlet greetingMessage = greet('Alice');\nconsole.log(greetingMessage); // Outputs: Hello, Alice!",
+        "additional_text": "In this example, we define a function called `greet` that takes one parameter named `name`. The function returns a greeting message that includes the name passed to it. When we call `greet('Alice')`, it produces the message 'Hello, Alice!'. Functions are great for keeping your code clean and reducing repetition.",
+        "video_link": "https://www.youtube.com/watch?v=3u9Z9cE2N54",
+        "mcq_questions": [
+          {
+            "question": "What is a function used for?",
+            "options": [
+              "A) To store data",
+              "B) To run code once",
+              "C) To perform a specific task and reuse code",
+              "D) To style web pages"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Conclusion: Your Journey Begins",
+        "text": "Congratulations! You’ve taken your first steps into the world of JavaScript. By understanding the basics of variables, data types, control flow, and functions, you now have the foundation to start creating interactive web pages. Remember, the key to becoming proficient in JavaScript (or any programming language) is to practice regularly and experiment with writing your own code. Happy coding!",
+        "video_link": "https://www.youtube.com/watch?v=2Jr94J7sQ9Y",
+        "mcq_questions": [
+          {
+            "question": "What is the first step to becoming proficient in JavaScript?",
+            "options": [
+              "A) Reading more books",
+              "B) Practicing and experimenting with code",
+              "C) Watching videos",
+              "D) Joining a coding class"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,133 @@
+{
+      "title": "API Development: Building RESTful APIs",
+      "description": "In this module, you will learn how to develop RESTful APIs using Node.js and Express.js. REST (Representational State Transfer) is an architectural style that defines a set of constraints for creating web services. We will cover the fundamental concepts, routing, and the implementation of a simple REST API.",
+      "video_link": "https://www.youtube.com/watch?v=G1rKml4H7Zw",
+      "content": [
+        {
+          "subheading": "Understanding APIs",
+          "text": "An API (Application Programming Interface) allows different software applications to communicate with each other. In web development, APIs are used to enable client-server communication. REST APIs are widely used due to their simplicity and scalability.",
+          "additional_text": "REST APIs use standard HTTP methods to perform CRUD (Create, Read, Update, Delete) operations."
+        },
+        {
+          "subheading": "Basics of REST",
+          "text": "RESTful APIs adhere to specific principles that make them stateless and cacheable. Here are the key principles:",
+          "key_points": [
+            "Statelessness: Each request from the client must contain all the information the server needs to fulfill that request.",
+            "Resource-Based: REST APIs use resources (like users, products) identified by URLs.",
+            "HTTP Methods: REST uses standard HTTP methods such as GET, POST, PUT, DELETE to perform actions on resources."
+          ],
+          "more_additional_text": "Understanding these principles is crucial for designing efficient APIs."
+        },
+        {
+          "subheading": "Setting Up Your Environment",
+          "text": "Before building your API, ensure you have Node.js and Express.js installed. You can set up your project by following these steps:",
+          "steps": [
+            {
+              "step": "1. Create a new directory for your project:",
+              "code_example": "mkdir my-rest-api && cd my-rest-api"
+            },
+            {
+              "step": "2. Initialize a new Node.js project:",
+              "code_example": "npm init -y",
+              "description": "This command creates a `package.json` file with default values."
+            },
+            {
+              "step": "3. Install Express.js:",
+              "code_example": "npm install express",
+              "description": "This installs Express.js, a web framework for Node.js."
+            }
+          ],
+          "additional_text": "You can also install additional packages like `nodemon` for easier development."
+        },
+        {
+          "subheading": "Creating a Basic REST API",
+          "text": "Now let's create a simple REST API. Create a file named `app.js` and add the following code:",
+          "code_example": [
+            "const express = require('express');",
+            "const app = express();",
+            "const PORT = process.env.PORT || 3000;",
+            "app.use(express.json());",
+            "",
+            "// Sample data",
+            "let users = [{ id: 1, name: 'John Doe' }, { id: 2, name: 'Jane Doe' }];",
+            "",
+            "// Get all users",
+            "app.get('/api/users', (req, res) => {",
+            "  res.json(users);",
+            "});",
+            "",
+            "// Get a user by ID",
+            "app.get('/api/users/:id', (req, res) => {",
+            "  const user = users.find(u => u.id === parseInt(req.params.id));",
+            "  if (!user) return res.status(404).send('User not found');",
+            "  res.json(user);",
+            "});",
+            "",
+            "// Create a new user",
+            "app.post('/api/users', (req, res) => {",
+            "  const newUser = { id: users.length + 1, name: req.body.name };",
+            "  users.push(newUser);",
+            "  res.status(201).json(newUser);",
+            "});",
+            "",
+            "// Start the server",
+            "app.listen(PORT, () => {",
+            "  console.log(`Server running on port ${PORT}`);",
+            "});"
+          ],
+          "additional_text": "This code creates a simple API with routes for getting and creating users."
+        },
+        {
+          "subheading": "Testing Your API",
+          "text": "You can test your API using tools like Postman or Insomnia. Here's how to test each endpoint:",
+          "key_points": [
+            "GET /api/users: Retrieves all users.",
+            "GET /api/users/:id: Retrieves a user by ID.",
+            "POST /api/users: Creates a new user (send JSON in the body)."
+          ],
+          "more_additional_text": "Testing is essential to ensure your API behaves as expected."
+        },
+        {
+          "subheading": "Error Handling",
+          "text": "To make your API robust, implement error handling. Here’s an example of handling errors for invalid routes:",
+          "code_example": "app.use((req, res) => {\n  res.status(404).send('Route not found');\n});",
+          "additional_text": "This middleware function will catch any undefined routes and return a 404 error."
+        },
+        {
+          "subheading": "Authentication and Authorization",
+          "text": "In real-world applications, securing your API is crucial. You can use packages like `jsonwebtoken` for authentication. Here's a basic example of how to set it up:",
+          "steps": [
+            {
+              "step": "1. Install `jsonwebtoken`:",
+              "code_example": "npm install jsonwebtoken"
+            },
+            {
+              "step": "2. Implement authentication logic in your API."
+            }
+          ],
+          "additional_text": "For production applications, always validate and sanitize input to protect against security threats."
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What does REST stand for?",
+              "options": ["Realistic State Transfer", "Representational State Transfer", "Remote State Transfer", "Resource State Transfer"],
+              "answer": "Representational State Transfer"
+            },
+            {
+              "question": "Which HTTP method is typically used to create a resource?",
+              "options": ["GET", "POST", "PUT", "DELETE"],
+              "answer": "POST"
+            },
+            {
+              "question": "What status code indicates a successful resource creation?",
+              "options": ["200", "201", "404", "500"],
+              "answer": "201"
+            }
+          ]
+        }
+      ]
+    
+  }
+  

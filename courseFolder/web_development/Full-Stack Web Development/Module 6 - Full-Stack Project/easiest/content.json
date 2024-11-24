@@ -1,0 +1,129 @@
+{
+      "title": "Full Stack Project",
+      "description": "This module will guide you through creating a simple full stack web application. You will learn the basics of full stack development, from setting up your environment to deploying your app online. By the end of this module, you will have a clear understanding of how a full stack application works.",
+      "video_link": "https://www.youtube.com/watch?v=1xZ21SxjJ68",
+      "content": [
+        {
+          "subheading": "Understanding Full Stack Development",
+          "text": "Full stack development means building both the front end and back end of a web application. The front end is what users see and interact with, while the back end handles the server-side logic and database interactions.",
+          "more_additional_text": "A full stack developer is someone who can work on both sides. This skill set allows you to create complete applications from scratch. Understanding how the front end and back end interact is crucial for creating a seamless user experience."
+        },
+        {
+          "subheading": "Selecting Technologies for Your Project",
+          "text": "Choosing the right technologies is essential for the success of your full stack project. Here are some popular options:",
+          "key_points": [
+            {
+              "category": "Front End Technologies",
+              "technologies": [
+                "HTML: The standard markup language for creating web pages.",
+                "CSS: The style sheet language used to describe the presentation of a document.",
+                "JavaScript: A programming language that enables you to create dynamic content.",
+                "React: A JavaScript library for building user interfaces efficiently."
+              ]
+            },
+            {
+              "category": "Back End Technologies",
+              "technologies": [
+                "Node.js: A JavaScript runtime that lets you run JavaScript on the server.",
+                "Express: A web framework for Node.js that simplifies building web applications."
+              ]
+            },
+            {
+              "category": "Database Technologies",
+              "technologies": [
+                "MongoDB: A NoSQL database that stores data in flexible, JSON-like documents.",
+                "MySQL: A popular relational database management system."
+              ]
+            }
+          ],
+          "more_additional_text": "Consider your project requirements and personal preferences when selecting technologies. It’s okay to start with what you know and explore new tools as you grow."
+        },
+        {
+          "subheading": "Planning Your Full Stack Project",
+          "text": "Before coding, it's crucial to plan your project. Proper planning saves time and helps you stay organized. Here are some steps to consider:",
+          "steps": [
+            {
+              "step": "Define Your Project's Purpose",
+              "description": "Decide what your application will do. For example, it could be a simple note-taking app or a blog platform."
+            },
+            {
+              "step": "Sketch Wireframes",
+              "description": "Create simple wireframes to visualize your application's layout. Wireframes are like blueprints for your app, showing where each element will go."
+            },
+            {
+              "step": "Outline the Database Structure",
+              "description": "Plan how you will store data in your database. If using MongoDB, think about what collections you'll need and the fields in each collection."
+            }
+          ],
+          "more_additional_text": "Planning is a vital step. It helps clarify your ideas and allows you to anticipate challenges before you start coding."
+        },
+        {
+          "subheading": "Building Your Application Step-by-Step",
+          "text": "Now it's time to build your application. This section breaks down the building process into three main phases:",
+          "key_points": [
+            {
+              "phase": "Back End Development",
+              "description": "Start by setting up your server using Node.js and Express. Here’s a simple example of how to create a basic server:",
+              "code_example": {
+                "language": "javascript",
+                "code_example": "const express = require('express');\nconst app = express();\nconst PORT = process.env.PORT || 3000;\n\napp.get('/', (req, res) => {\n    res.send('Hello, Full Stack World!');\n});\n\napp.listen(PORT, () => {\n    console.log(`Server is running on port ${PORT}`);\n});"
+              }
+            },
+            {
+              "phase": "Connecting to the Database",
+              "description": "Next, connect your server to a database like MongoDB. This enables your application to store and retrieve data. Here’s how to set up a connection to MongoDB:",
+              "code_example": {
+                "language": "javascript",
+                "code_example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost/myapp', { useNewUrlParser: true, useUnifiedTopology: true })\n    .then(() => console.log('MongoDB connected'))\n    .catch(err => console.error(err));"
+              }
+            },
+            {
+              "phase": "Front End Development",
+              "description": "Finally, use a front-end framework like React to build the user interface. Here’s an example of a simple React component that displays a message:",
+              "code_example": {
+                "language": "javascript",
+                "code_example": "import React from 'react';\n\nconst App = () => {\n    return <h1>Welcome to My Full Stack Application!</h1>;\n};\n\nexport default App;"
+              }
+            }
+          ],
+          "more_additional_text": "Take your time while building each part. Test as you go to ensure everything works together smoothly."
+        },
+        {
+          "subheading": "Testing Your Application",
+          "text": "Testing is essential to ensure your application is functioning correctly. Here are some methods to test your application:",
+          "key_points": [
+            "Manual Testing: Interact with your application like a user would. Click buttons, fill out forms, and check if everything behaves as expected.",
+            "Automated Testing: Use tools like Jest or Mocha to write tests that run automatically. This can save time and catch bugs quickly."
+          ],
+          "more_additional_text": "Testing is vital for ensuring the quality of your application. A well-tested app provides a better experience for users."
+        },
+        {
+          "subheading": "Deploying Your Full Stack Application",
+          "text": "After building and testing your application, it’s time to deploy it so others can use it. Here’s how to deploy your app:",
+          "steps": [
+            {
+              "step": "Select a Hosting Provider",
+              "description": "Choose a hosting service like Heroku, Vercel, or Netlify to host your application."
+            },
+            {
+              "step": "Prepare for Deployment",
+              "description": "Ensure your application is production-ready by setting environment variables and installing all dependencies."
+            },
+            {
+              "step": "Deploy Your Application",
+              "description": "Follow the instructions from your hosting provider to upload your app. Many services have straightforward guides."
+            },
+            {
+              "step": "Test the Live Version",
+              "description": "Once deployed, check your application in a web browser to make sure everything works as expected."
+            }
+          ],
+          "more_additional_text": "Deployment can feel challenging, but with the right resources and documentation, it becomes much easier."
+        }
+      ],
+      "conclusion": {
+        "summary": "In this module, you learned the basics of full stack development. You discovered how to plan, build, and deploy a full stack application.",
+        "call_to_action": "Now it’s your turn! Start building your own full stack project. Don't hesitate to experiment and explore new ideas!"
+      }
+  }
+  

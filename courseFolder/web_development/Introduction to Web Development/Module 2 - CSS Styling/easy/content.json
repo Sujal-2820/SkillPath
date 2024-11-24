@@ -1,0 +1,85 @@
+{
+    "title": "Getting Started with CSS: Simple Styling for Your Web Pages",
+    "content": [
+      {
+        "subheading": "Understanding CSS",
+        "text": "CSS stands for Cascading Style Sheets. It is a language used to style and layout web pages. With CSS, you can change colors, fonts, spacing, and even the layout of your web pages. While HTML creates the structure, CSS is responsible for how it looks. This makes it easy to separate content from design.",
+        "code_example": "body {\n    background-color: #ffffff;\n    font-family: 'Arial', sans-serif;\n}",
+        "additional_text": "In this example, we set the background color of the entire page to white and use the Arial font for the text. You can change these values to customize the look of your website.",
+        "video_link": "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
+        "mcq_questions": [
+          {
+            "question": "What does CSS stand for?",
+            "options": [
+              "A) Creative Style Sheets",
+              "B) Cascading Style Sheets",
+              "C) Color Style Sheets",
+              "D) Computer Style Sheets"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Selecting Elements with CSS",
+        "text": "CSS allows you to select HTML elements to apply styles. You can use different types of selectors, such as element selectors (like `h1`), class selectors (like `.highlight`), and ID selectors (like `#header`). This flexibility helps you style multiple elements efficiently.",
+        "code_example": "p {\n    color: green;\n}\n\n.highlight {\n    font-weight: bold;\n}\n\n#header {\n    font-size: 24px;\n}",
+        "additional_text": "In this code, all `<p>` elements will have green text. Any element with the class 'highlight' will be bold, and the element with the ID 'header' will have a font size of 24 pixels.",
+        "additional_code_example": "<h1 id=\"header\">Welcome to My Site!</h1>\n<p class=\"highlight\">This text is bold and highlighted.</p>",
+        "video_link": "https://www.youtube.com/watch?v=0afXusf7y3g",
+        "mcq_questions": [
+          {
+            "question": "Which selector targets all <p> elements?",
+            "options": [
+              "A) #header",
+              "B) .highlight",
+              "C) p",
+              "D) *"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "The Box Model Explained",
+        "text": "Every element on a web page can be thought of as a box. The CSS box model consists of the content area, padding, border, and margin. Understanding this model helps you manage the spacing and layout of elements on your page.",
+        "code_example": "div {\n    margin: 15px;\n    padding: 10px;\n    border: 1px solid black;\n}",
+        "additional_text": "This code styles a `<div>` element with a margin of 15 pixels outside the border, 10 pixels of padding inside the border, and a 1-pixel solid black border. This creates space around the box, inside the box, and a visible border.",
+        "additional_code_example": "<div>\n    <p>This is content inside a box!</p>\n</div>",
+        "video_link": "https://www.youtube.com/watch?v=PK4xG8M1CjA",
+        "mcq_questions": [
+          {
+            "question": "What part of the box model creates space around an element?",
+            "options": [
+              "A) Padding",
+              "B) Margin",
+              "C) Border",
+              "D) Content"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Making Your Design Responsive",
+        "text": "Responsive design ensures your website looks good on any device, like a computer or a smartphone. CSS media queries allow you to apply styles based on the screen size. This helps your website adjust its layout to fit different screens.",
+        "code_example": "@media (max-width: 500px) {\n    body {\n        background-color: lightblue;\n    }\n    h1 {\n        font-size: 20px;\n    }\n}",
+        "additional_text": "In this example, when the screen width is 500 pixels or less, the body background changes to light blue, and all `<h1>` elements will have a font size of 20 pixels. This makes your website more user-friendly on smaller devices.",
+        "additional_code_example": "<h1>This is a Responsive Heading</h1>\n<p>Resize your browser to see the changes!</p>",
+        "video_link": "https://www.youtube.com/watch?v=5A1LoA9dN9Y",
+        "mcq_questions": [
+          {
+            "question": "What do media queries do in CSS?",
+            "options": [
+              "A) They apply styles based on device type",
+              "B) They link external stylesheets",
+              "C) They create animations",
+              "D) They change HTML content"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      }
+    ]
+  }
+  

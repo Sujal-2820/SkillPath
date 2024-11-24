@@ -1,0 +1,166 @@
+{
+  "onboarding_suggestions": {
+    "domains": {
+      "web_development": [
+        {
+          "course_name": "Introduction to Web Development",
+          "difficulty": "beginner",
+          "description": "Covers basic HTML, CSS, and JavaScript for building simple websites.",
+          "prerequisites": "No prior experience required."
+        },
+        {
+          "course_name": "Intermediate Front-End Development",
+          "difficulty": "intermediate",
+          "description": "Focuses on JavaScript frameworks like React and Vue for dynamic front-end development.",
+          "prerequisites": "Basic understanding of HTML, CSS, and JavaScript."
+        },
+        {
+          "course_name": "Full-Stack Development Fundamentals",
+          "difficulty": "advanced",
+          "description": "Covers both front-end and back-end development using MERN or MEAN stack.",
+          "prerequisites": "Proficient in front-end development and basic understanding of server-side programming."
+        },
+        {
+          "course_name": "Mastering Web Development",
+          "difficulty": "expert",
+          "description": "Advanced web development techniques, focusing on performance optimization, security, and scaling.",
+          "prerequisites": "Strong proficiency in full-stack development."
+        }
+      ],
+      "data_science": [
+        {
+          "course_name": "Introduction to Data Science",
+          "difficulty": "beginner",
+          "description": "Introduction to data science concepts, covering Python, basic statistics, and data manipulation.",
+          "prerequisites": "No prior experience required."
+        },
+        {
+          "course_name": "Intermediate Data Analytics",
+          "difficulty": "intermediate",
+          "description": "Learn to analyze data using tools like Pandas, NumPy, and visualization libraries.",
+          "prerequisites": "Basic understanding of Python and statistics."
+        },
+        {
+          "course_name": "Machine Learning and AI Basics",
+          "difficulty": "advanced",
+          "description": "Introduction to machine learning algorithms such as regression, classification, and clustering.",
+          "prerequisites": "Proficient in Python, data analytics, and basic statistics."
+        },
+        {
+          "course_name": "Advanced Data Science Techniques",
+          "difficulty": "expert",
+          "description": "Deep dive into advanced machine learning, neural networks, and big data analytics.",
+          "prerequisites": "Strong proficiency in machine learning and data analysis."
+        }
+      ],
+      "mobile_app_development": [
+        {
+          "course_name": "Introduction to iOS/Android Development",
+          "difficulty": "beginner",
+          "description": "Learn the basics of mobile app development using Swift (iOS) or Kotlin (Android).",
+          "prerequisites": "No prior experience required."
+        },
+        {
+          "course_name": "Cross-Platform App Development",
+          "difficulty": "intermediate",
+          "description": "Develop mobile apps using React Native or Flutter for both iOS and Android.",
+          "prerequisites": "Basic understanding of programming."
+        },
+        {
+          "course_name": "Advanced Mobile App Development",
+          "difficulty": "advanced",
+          "description": "In-depth coverage of mobile architecture, APIs, and complex UI/UX patterns.",
+          "prerequisites": "Proficient in mobile app development for either iOS or Android."
+        },
+        {
+          "course_name": "Mastering Mobile App Development",
+          "difficulty": "expert",
+          "description": "Master the skills to build and scale mobile apps, including security, performance, and deployment.",
+          "prerequisites": "Advanced knowledge of mobile development and cross-platform frameworks."
+        }
+      ],
+      "artificial_intelligence": [
+        {
+          "course_name": "Introduction to AI and Machine Learning",
+          "difficulty": "beginner",
+          "description": "Basic understanding of AI concepts, covering supervised and unsupervised learning.",
+          "prerequisites": "No prior experience required."
+        },
+        {
+          "course_name": "Intermediate Machine Learning",
+          "difficulty": "intermediate",
+          "description": "Dive into key machine learning models such as decision trees, SVMs, and more.",
+          "prerequisites": "Familiarity with Python and basic machine learning algorithms."
+        },
+        {
+          "course_name": "Deep Learning Basics",
+          "difficulty": "advanced",
+          "description": "Introduction to neural networks and how they power deep learning techniques.",
+          "prerequisites": "Solid foundation in machine learning and statistics."
+        },
+        {
+          "course_name": "Advanced AI and Deep Learning Techniques",
+          "difficulty": "expert",
+          "description": "Master advanced AI topics such as GANs, reinforcement learning, and more complex neural networks.",
+          "prerequisites": "Proficient in deep learning frameworks and models."
+        }
+      ]
+    }
+  },
+  "module_variation_rules": {
+    "standard_module": {
+      "average_or_above_average_score": {
+        "positive_review": {
+          "next_action": "next_topic_module",
+          "description": "The user progresses to the next module topic based on their positive feedback."
+        },
+        "neutral_or_negative_review": {
+          "next_action": "easy",
+          "description": "The user is provided with the easier version of the module to improve understanding."
+        }
+      },
+      "below_average_score": {
+        "positive_review": {
+          "next_action": "easy",
+          "description": "The user is directed to the easy module despite their positive review to reinforce learning."
+        },
+        "neutral_or_negative_review": {
+          "next_action": "easiest",
+          "description": "The user receives the easiest version due to poor performance and negative feedback."
+        }
+      }
+    },
+    "easy_module": {
+      "average_or_above_average_score": {
+        "positive_review": {
+          "next_action": "next",
+          "description": "The user moves to the next topic after successfully completing the easy module."
+        },
+        "neutral_or_negative_review": {
+          "next_action": "easiest",
+          "description": "The easiest module is given if the user finds the easy module too challenging."
+        }
+      },
+      "below_average_score": {
+        "positive_review": {
+          "next_action": "easiest",
+          "description": "The user is moved to the easiest version despite positive feedback to ensure comprehension."
+        },
+        "neutral_or_negative_review": {
+          "next_action": "easiest",
+          "description": "Reinforcement through the easiest module due to low performance and negative feedback."
+        }
+      }
+    },
+    "easiest_module": {
+      "average_or_above_average_score": {
+        "next_action": "next_topic_module",
+        "description": "The user can move to the next topic module after successfully completing the easiest version."
+      },
+      "below_average_score": {
+        "next_action": "easiest",
+        "description": "The user remains on the easiest module until performance improves."
+      }
+    }
+  }
+}

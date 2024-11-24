@@ -1,0 +1,129 @@
+{
+    "title": "Building a Simple Web Application: Step-by-Step Guide",
+    "content": [
+      {
+        "subheading": "1. Understanding the Application Structure",
+        "text": "Before jumping into coding, it’s crucial to understand the basic structure of a web application. Typically, a simple web application consists of three main components:\n\n- **Frontend**: This is what users see and interact with. It includes HTML, CSS, and JavaScript.\n- **Backend**: This is the server-side logic that handles data processing, authentication, and database interaction.\n- **Database**: This stores user data, application data, and other important information for your app to function.\n\nThese three parts work together to deliver a dynamic and interactive user experience.",
+        "video_link": "https://www.youtube.com/watch?v=Yr3yq_7O2sU",
+        "mcq_questions": [
+          {
+            "question": "Which component of a web application is responsible for what the user sees?",
+            "options": [
+              "A) Backend",
+              "B) Frontend",
+              "C) Database",
+              "D) All of the above"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "2. Setting Up the Project",
+        "text": "To build your web application, start by setting up your project structure. Here’s how you can do it:\n\n1. **Create a folder for your project**: This will hold all your files.\n2. **Create the essential files**: You’ll need three main files to begin: `index.html`, `style.css`, and `app.js`.\n\n- `index.html`: This is the main HTML file where you’ll define the structure of your web application.\n- `style.css`: This is where you’ll style your web pages.\n- `app.js`: This is where you’ll write the interactive JavaScript code to add functionality.",
+        "code_example": [
+          {
+            "filename": "index.html",
+            "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Simple Web App</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Welcome to My Simple Web App</h1>\n  <button id=\"clickMe\">Click Me</button>\n  <script src=\"app.js\"></script>\n</body>\n</html>"
+          },
+          {
+            "filename": "style.css",
+            "code": "body {\n  font-family: Arial, sans-serif;\n  text-align: center;\n  padding-top: 50px;\n}\n\nbutton {\n  background-color: #28a745;\n  color: white;\n  padding: 10px 20px;\n  border: none;\n  cursor: pointer;\n}"
+          },
+          {
+            "filename": "app.js",
+            "code": "document.getElementById('clickMe').addEventListener('click', function() {\n  alert('Button Clicked!');\n});"
+          }
+        ],
+        "additional_text": "This basic setup gives you the foundation of a web application, allowing you to build more features on top of it.",
+        "mcq_questions": [
+          {
+            "question": "Which file is responsible for adding interactive behavior to your web application?",
+            "options": [
+              "A) index.html",
+              "B) style.css",
+              "C) app.js",
+              "D) README.md"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "3. Adding Functionality with JavaScript",
+        "text": "With the basic structure in place, let’s add some functionality using JavaScript. In this example, we’ve added a button in the HTML. Now, we’ll make the button display an alert message when clicked.\n\nThis is done using an event listener in JavaScript, which waits for a user action (like clicking the button) and then runs a function. Here’s a simple code snippet explaining how this works:",
+        "code_example": [
+          {
+            "filename": "app.js",
+            "code": "document.getElementById('clickMe').addEventListener('click', function() {\n  alert('You just clicked the button!');\n});"
+          }
+        ],
+        "additional_text": "By using `getElementById`, you’re targeting the button with the ID `clickMe` and attaching a `click` event. When the user clicks the button, the message 'You just clicked the button!' will pop up on the screen."
+      },
+      {
+        "subheading": "4. Styling Your Application",
+        "text": "Once your web app has basic functionality, it’s time to make it look good. This is where CSS comes in. You can modify the appearance of your web application by updating your `style.css` file.",
+        "code_example": [
+          {
+            "filename": "style.css",
+            "code": "body {\n  background-color: #f4f4f4;\n  color: #333;\n  font-family: Arial, sans-serif;\n}\n\nbutton {\n  font-size: 18px;\n  padding: 10px;\n  border-radius: 5px;\n}\n\nbutton:hover {\n  background-color: #218838;\n}"
+          }
+        ],
+        "additional_text": "In this code, the button changes color when hovered over. It’s a small detail that improves the user experience and makes the web app feel more interactive.",
+        "video_link": "https://www.youtube.com/watch?v=yfoY53QXEnI",
+        "mcq_questions": [
+          {
+            "question": "What does the `hover` pseudo-class do in CSS?",
+            "options": [
+              "A) It hides the button.",
+              "B) It changes the style of an element when the user hovers over it.",
+              "C) It adds animations to the page.",
+              "D) It moves the button to another place."
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "5. Connecting a Backend (Optional)",
+        "text": "If you want your web app to store data or interact with a server, you’ll need a backend. You can use a tool like **Express.js** for the server-side logic and **MongoDB** or **Firebase** for the database. In a simple web app, this might look like a form where users can submit information (e.g., a contact form). Here’s an example of a basic server in Node.js:",
+        "code_example": [
+          {
+            "filename": "server.js",
+            "code": "const express = require('express');\nconst app = express();\nconst port = 3000;\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(port, () => {\n  console.log(`Server is running on http://localhost:${port}`);\n});"
+          }
+        ],
+        "additional_text": "This code sets up a simple server using Express. It listens on port 3000, and when the user navigates to `http://localhost:3000`, it responds with 'Hello World!'.",
+        "video_link": "https://www.youtube.com/watch?v=pKd0Rpw7O48",
+        "mcq_questions": [
+          {
+            "question": "Which JavaScript library is used to create backend servers?",
+            "options": [
+              "A) React.js",
+              "B) jQuery",
+              "C) Express.js",
+              "D) Angular.js"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "6. Conclusion",
+        "text": "Building a web application doesn’t have to be complicated. By breaking it down into simple steps—like structuring your project, adding functionality with JavaScript, and styling it with CSS—you can create fully functioning web applications.\n\nAs you get more comfortable, you can add more features like connecting to a database or handling user authentication. For now, focus on building small projects and improving your skills one step at a time.",
+        "mcq_questions":[
+          {
+            "question": "What is the purpose of the `app.listen()` method in Express.js?",
+            "options": [
+              "A) To send data to the client",
+              "B) To initialize a server to listen for incoming requests",
+              "C) To define the routes of the application",
+              "D) To connect to the database"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

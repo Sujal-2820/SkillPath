@@ -1,0 +1,116 @@
+{
+    "title": "JavaScript Basics: Your First Steps into Programming",
+    "content": [
+      {
+        "subheading": "What is JavaScript?",
+        "text": "JavaScript is a programming language that allows you to make web pages interactive. Unlike HTML and CSS, which are used to structure and style web pages, JavaScript lets you create dynamic content. This means you can make things happen on a web page, like responding to clicks or changing content without refreshing the page.",
+        "video_link": "https://www.youtube.com/watch?v=HLn6GmIhG1M",
+        "mcq_questions": [
+          {
+            "question": "What is the primary use of JavaScript?",
+            "options": [
+              "A) To style web pages",
+              "B) To structure web pages",
+              "C) To make web pages interactive",
+              "D) To serve web pages"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Getting Started with Variables",
+        "text": "Variables are like containers that store information. In JavaScript, you can create a variable using `let`, `const`, or `var`. Here's a quick guide:\n- **let**: You can change the value later.\n- **const**: The value can't be changed after it's set.\n- **var**: An older way to declare variables with a broader scope.",
+        "code_example": "// Declaring variables\nlet myName = 'Alice';\nconst myAge = 25;\nvar isStudent = true;\n\nconsole.log(myName); // Outputs: Alice\nconsole.log(myAge); // Outputs: 25\nconsole.log(isStudent); // Outputs: true",
+        "additional_text": "In the example above, we created three variables. `myName` can change if needed, while `myAge` will always be 25, and `isStudent` indicates whether the person is a student.",
+        "video_link": "https://www.youtube.com/watch?v=4JS54L3dbJw",
+        "mcq_questions": [
+          {
+            "question": "Which variable type cannot be changed?",
+            "options": [
+              "A) let",
+              "B) var",
+              "C) const",
+              "D) all of them"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Understanding Data Types",
+        "text": "In JavaScript, there are different types of data you can use. Here are some common types:\n- **String**: Text wrapped in quotes (e.g., 'Hello')\n- **Number**: Numeric values (e.g., 42)\n- **Boolean**: True or false values\n- **Object**: A collection of related data (e.g., {name: 'Alice', age: 25})\n- **Array**: A list of values (e.g., [1, 2, 3])",
+        "code_example": "// Different data types\nlet greeting = 'Hello, World!'; // String\nlet count = 10; // Number\nlet isActive = true; // Boolean\nlet user = {name: 'Alice', age: 25}; // Object\nlet numbers = [1, 2, 3, 4]; // Array\n\nconsole.log(greeting);\nconsole.log(count);\nconsole.log(isActive);\nconsole.log(user);\nconsole.log(numbers);",
+        "additional_text": "This code snippet shows how to declare variables of different data types. Using `console.log()`, we can see the values in the console.",
+        "video_link": "https://www.youtube.com/watch?v=1Rg64LyfL9E",
+        "mcq_questions": [
+          {
+            "question": "Which of the following is an object?",
+            "options": [
+              "A) 'Hello'",
+              "B) 123",
+              "C) {name: 'Alice', age: 25}",
+              "D) [1, 2, 3]"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Control Flow: Making Decisions",
+        "text": "Control flow allows you to make decisions in your code. You can use `if` statements to check conditions and execute code based on the results. Loops, like `for` loops, let you repeat actions multiple times.",
+        "code_example": "// If statement example\nlet score = 85;\nif (score >= 60) {\n    console.log('You passed!');\n} else {\n    console.log('You failed.');\n}\n\n// For loop example\nfor (let i = 1; i <= 5; i++) {\n    console.log('Count: ' + i);\n}",
+        "additional_text": "In the first example, the code checks if the `score` is 60 or more and logs a message accordingly. The second example counts from 1 to 5 using a loop.",
+        "video_link": "https://www.youtube.com/watch?v=wo38E2K7twk",
+        "mcq_questions": [
+          {
+            "question": "What will be logged if the score is 50?",
+            "options": [
+              "A) You passed!",
+              "B) You failed.",
+              "C) Score is 50.",
+              "D) Count: 5"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Functions: Reusing Code",
+        "text": "Functions are reusable pieces of code that perform a specific task. You can define a function, give it a name, and call it whenever you need it. This helps keep your code organized and prevents repetition.",
+        "code_example": "// Function to greet someone\nfunction greet(name) {\n    return 'Hello, ' + name + '!';\n}\n\nlet greetingMessage = greet('Alice');\nconsole.log(greetingMessage); // Outputs: Hello, Alice!",
+        "additional_text": "In this code, we define a function named `greet` that takes a parameter called `name`. It returns a greeting message. We call the function with 'Alice' and log the result.",
+        "video_link": "https://www.youtube.com/watch?v=3u9Z9cE2N54",
+        "mcq_questions": [
+          {
+            "question": "What is the purpose of a function?",
+            "options": [
+              "A) To store data",
+              "B) To run code once",
+              "C) To perform a specific task",
+              "D) To style web pages"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Conclusion: Your Journey Begins",
+        "text": "Congratulations! You've taken your first steps into the world of JavaScript. With these basics, you can start creating interactive web pages and exploring more advanced topics. Keep practicing and experimenting, and soon you'll be able to build amazing things!",
+        "video_link": "https://www.youtube.com/watch?v=2Jr94J7sQ9Y",
+        "mcq_questions": [
+          {
+            "question": "What should you do next after learning these basics?",
+            "options": [
+              "A) Stop coding",
+              "B) Keep practicing and exploring advanced topics",
+              "C) Only use HTML and CSS",
+              "D) Only read about JavaScript"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

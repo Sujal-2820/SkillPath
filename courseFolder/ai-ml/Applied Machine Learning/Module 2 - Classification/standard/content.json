@@ -1,0 +1,110 @@
+{
+  "module": "Classification",
+  "introduction": {
+    "text": "Classification is a supervised machine learning technique used to predict the categorical label of new observations based on past data. Unlike regression, which predicts continuous outcomes, classification aims to categorize data into discrete classes. It is widely used in various applications, such as spam detection, sentiment analysis, and image recognition."
+  },
+  "sections": [
+    {
+      "subheading": {
+        "title": "What is Classification?",
+        "text": "In classification, we train a model on a labeled dataset, where each instance is associated with a specific category. The model learns the relationship between input features and the corresponding labels, enabling it to predict labels for new, unseen instances.",
+        "additionalText": "Common examples of classification tasks include:\n- Email classification (spam or not spam)\n- Image classification (identifying objects within an image)\n- Medical diagnosis (classifying diseases based on symptoms)\n- Sentiment analysis (determining whether a review is positive or negative)",
+        "quiz": [
+          {
+            "question": "What is the primary goal of classification in machine learning?",
+            "options": [
+              "Predicting continuous values",
+              "Categorizing data into discrete classes",
+              "Finding patterns in unstructured data",
+              "Clustering similar data points"
+            ],
+            "correctAnswer": "Categorizing data into discrete classes"
+          }
+        ]
+      }
+    },
+    {
+      "subheading": {
+        "title": "Types of Classification Algorithms",
+        "text": "There are several types of classification algorithms, each suitable for different kinds of data and problems. Some of the most common algorithms include:",
+        "additionalText": "- **Logistic Regression**: Despite its name, it's a classification algorithm used for binary classification tasks.\n- **Decision Trees**: A tree-like model that splits data into branches based on feature values, leading to class labels.\n- **Random Forest**: An ensemble method that combines multiple decision trees to improve classification accuracy.\n- **Support Vector Machines (SVM)**: Finds the optimal hyperplane that separates different classes in the feature space.\n- **K-Nearest Neighbors (KNN)**: Classifies instances based on the labels of their nearest neighbors in the feature space.",
+        "moreAdditionalText": "Choosing the right classification algorithm depends on factors such as the size of the dataset, the number of features, and the complexity of the relationships in the data.",
+        "quiz": [
+          {
+            "question": "Which of the following is a commonly used classification algorithm?",
+            "options": [
+              "Linear Regression",
+              "Logistic Regression",
+              "Principal Component Analysis",
+              "K-Means Clustering"
+            ],
+            "correctAnswer": "Logistic Regression"
+          }
+        ]
+      }
+    },
+    {
+      "subheading": {
+        "title": "Evaluating Classification Models",
+        "text": "To assess the performance of a classification model, we use various evaluation metrics, such as:",
+        "additionalText": "- **Accuracy**: The proportion of correctly classified instances among the total instances.\n- **Precision**: The proportion of true positive predictions among all positive predictions (how many selected items are relevant).\n- **Recall (Sensitivity)**: The proportion of true positive predictions among all actual positives (how many relevant items are selected).\n- **F1 Score**: The harmonic mean of precision and recall, providing a balance between the two metrics.\n- **Confusion Matrix**: A table that summarizes the performance of a classification algorithm by comparing predicted and actual labels.",
+        "moreAdditionalText": "Understanding these metrics helps in fine-tuning models and making informed decisions about which model to deploy.",
+        "quiz": [
+          {
+            "question": "What does the F1 score measure?",
+            "options": [
+              "The overall accuracy of the model",
+              "The balance between precision and recall",
+              "The performance of regression models",
+              "The number of classes in the dataset"
+            ],
+            "correctAnswer": "The balance between precision and recall"
+          }
+        ]
+      }
+    },
+    {
+      "subheading": {
+        "title": "Implementing a Classification Model",
+        "text": "Here’s a simple example of implementing a classification model using Logistic Regression with Python and Scikit-learn:",
+        "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\n\n# Load dataset\niris = load_iris()\nX = iris.data  # Features\ny = iris.target  # Labels\n\n# Split dataset into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Create a Logistic Regression model\nmodel = LogisticRegression()\n\n# Train the model\nmodel.fit(X_train, y_train)\n\n# Make predictions\npredictions = model.predict(X_test)\n\n# Evaluate accuracy\naccuracy = accuracy_score(y_test, predictions)\nprint(f'Accuracy: {accuracy * 100:.2f}%')",
+        "additionalText": "In this example, we load the Iris dataset, which consists of three classes of iris plants based on four features. We split the dataset into training and testing sets, train a Logistic Regression model, make predictions, and evaluate the model's accuracy.",
+        "quiz": [
+          {
+            "question": "What library is used in the example for classification?",
+            "options": [
+              "Pandas",
+              "NumPy",
+              "Scikit-learn",
+              "Matplotlib"
+            ],
+            "correctAnswer": "Scikit-learn"
+          }
+        ]
+      }
+    },
+    {
+      "subheading": {
+        "title": "Real-World Applications of Classification",
+        "text": "Classification techniques are used across various domains and industries. Some notable applications include:",
+        "additionalText": "- **Medical Diagnosis**: Classifying diseases based on symptoms and test results to aid in diagnosis and treatment.\n- **Image Recognition**: Identifying objects, faces, and scenes in images for security, entertainment, and social media.\n- **Spam Detection**: Automatically classifying emails as spam or legitimate to enhance user experience.\n- **Customer Segmentation**: Categorizing customers based on behavior and preferences for targeted marketing.",
+        "moreAdditionalText": "As the demand for automation and intelligent systems grows, classification models will continue to play a critical role in decision-making processes across sectors.",
+        "quiz": [
+          {
+            "question": "Which of the following is an application of classification?",
+            "options": [
+              "Predicting stock prices",
+              "Classifying emails as spam or not spam",
+              "Forecasting weather conditions",
+              "Clustering similar customers"
+            ],
+            "correctAnswer": "Classifying emails as spam or not spam"
+          }
+        ]
+      }
+    }
+  ],
+  "conclusion": {
+    "text": "Classification is a foundational technique in machine learning that enables the categorization of data into discrete classes. By understanding different algorithms, evaluation methods, and real-world applications, practitioners can effectively implement classification models to solve complex problems."
+  }
+}

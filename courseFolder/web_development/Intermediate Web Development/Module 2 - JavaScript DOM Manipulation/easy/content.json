@@ -1,0 +1,130 @@
+{
+    "title": "JavaScript DOM Manipulation: A Beginner's Guide",
+    "content": [
+      {
+        "subheading": "Understanding the DOM",
+        "text": "DOM stands for Document Object Model. It represents the structure of a webpage, where every element in your HTML (like headings, paragraphs, and buttons) becomes a node that JavaScript can work with.",
+        "additional_text": "Think of it like a tree where the HTML elements are the branches. JavaScript can help you move through this tree and change things on the webpage, like updating text, adding new elements, or removing sections.",
+        "quiz_questions": [
+          {
+            "question": "What does DOM stand for?",
+            "options": ["Document Object Model", "Dynamic Object Module", "Data Output Model"],
+            "correct_answer": "Document Object Model"
+          }
+        ]
+      },
+      {
+        "subheading": "Selecting Elements in the DOM",
+        "text": "To change or interact with elements on the page, you first need to 'select' or 'grab' them using JavaScript. JavaScript gives you methods like `getElementById` and `querySelector` to help with this.",
+        "code_example": [
+          {
+            "filename": "Selecting Elements Example",
+            "code": "// Select an element by its ID\nlet title = document.getElementById('main-title');\n\n// Select the first paragraph using querySelector\nlet paragraph = document.querySelector('p');"
+          }
+        ],
+        "additional_text": "In the example above, we select a heading using its ID and the first paragraph on the page. Once selected, you can change them with JavaScript.",
+        "quiz_questions": [
+          {
+            "question": "Which method is used to select an element by its ID?",
+            "options": ["getElementById", "querySelector", "getElementByTag"],
+            "correct_answer": "getElementById"
+          }
+        ]
+      },
+      {
+        "subheading": "Changing HTML Content",
+        "text": "After selecting an element, you can change what it displays. For example, you can update the text inside a heading or paragraph using `innerHTML` or `textContent`.",
+        "code_example": [
+          {
+            "filename": "Changing Content Example",
+            "code": "// Change the text of the selected element\ntitle.innerHTML = 'Welcome to My Website!';\n\n// Update the paragraph's content\nparagraph.textContent = 'This is new content.';"
+          }
+        ],
+        "additional_text": "The `innerHTML` property allows you to set new HTML or text inside the element, while `textContent` focuses purely on the text without affecting any HTML structure."
+      },
+      {
+        "subheading": "Adding New Elements",
+        "text": "You can also create new elements and add them to your webpage. This is useful when you want to dynamically update the content, like adding a new section when a user clicks a button.",
+        "code_example": [
+          {
+            "filename": "Adding Elements Example",
+            "code": "// Create a new div element\nlet newDiv = document.createElement('div');\nnewDiv.textContent = 'This is a new section!';\n\n// Add the new element to the body\ndocument.body.appendChild(newDiv);"
+          }
+        ],
+        "quiz_questions": [
+          {
+            "question": "Which method is used to create a new element?",
+            "options": ["newElement", "createElement", "makeElement"],
+            "correct_answer": "createElement"
+          }
+        ]
+      },
+      {
+        "subheading": "Removing Elements",
+        "text": "Just like you can add elements, you can also remove them. The `removeChild` method lets you delete an element from the DOM.",
+        "code_example": [
+          {
+            "filename": "Removing Elements Example",
+            "code": "// Remove an element by its ID\nlet elementToRemove = document.getElementById('old-section');\ndocument.body.removeChild(elementToRemove);"
+          }
+        ],
+        "quiz_questions": [
+          {
+            "question": "Which method removes an element from the DOM?",
+            "options": ["deleteElement", "removeElement", "removeChild"],
+            "correct_answer": "removeChild"
+          }
+        ]
+      },
+      {
+        "subheading": "Modifying Styles",
+        "text": "Not only can JavaScript change the HTML content, but it can also update CSS styles dynamically. You can use the `style` property to change the color, size, and layout of elements.",
+        "code_example": [
+          {
+            "filename": "Modifying Styles Example",
+            "code": "// Change the background color of the body\ndocument.body.style.backgroundColor = 'lightblue';\n\n// Change the font size of the title\ntitle.style.fontSize = '32px';"
+          }
+        ],
+        "additional_text": "This makes your website interactive, allowing you to update the look of your page without needing to reload it."
+      },
+      {
+        "subheading": "Handling Events",
+        "text": "An event is something the user does, like clicking a button or hovering over an image. JavaScript can listen for these events and respond using `addEventListener`. This is how you make web pages interactive.",
+        "code_example": [
+          {
+            "filename": "Handling Events Example",
+            "code": "// Add a click event to a button\nlet button = document.getElementById('clickMeButton');\nbutton.addEventListener('click', function() {\n  alert('Button was clicked!');\n});"
+          }
+        ],
+        "quiz_questions": [
+          {
+            "question": "Which method is used to listen for an event?",
+            "options": ["listenEvent", "onClick", "addEventListener"],
+            "correct_answer": "addEventListener"
+          }
+        ]
+      },
+      {
+        "subheading": "Traversing the DOM",
+        "text": "DOM traversal means moving through the DOM tree, going from parent to child elements or between siblings. You can use methods like `parentNode`, `nextSibling`, or `children` to move around the DOM.",
+        "code_example": [
+          {
+            "filename": "Traversing DOM Example",
+            "code": "// Get the parent of an element\nlet parent = title.parentNode;\n\n// Get the next sibling of the paragraph\nlet nextElement = paragraph.nextSibling;"
+          }
+        ],
+        "quiz_questions": [
+          {
+            "question": "What method allows you to move to the parent node?",
+            "options": ["parentNode", "moveParent", "parentElement"],
+            "correct_answer": "parentNode"
+          }
+        ]
+      },
+      {
+        "subheading": "Why Learn DOM Manipulation?",
+        "text": "DOM manipulation allows you to create more dynamic and interactive websites. It’s a key skill for any web developer because it gives you control over the content, styles, and user interactions on the page."
+      }
+    ]
+  }
+  

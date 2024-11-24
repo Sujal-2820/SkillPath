@@ -1,0 +1,108 @@
+{
+    "title": "Mastering Advanced HTML and CSS Techniques",
+    "content": [
+      {
+        "subheading": "Why Learn Advanced HTML and CSS?",
+        "text": "You might be thinking: 'I know how to make websites using basic HTML and CSS, so why do I need to learn more?' Well, as websites become more complex, you’ll need advanced skills to build responsive layouts, handle multimedia elements, and ensure your website is accessible. This is where advanced HTML and CSS come in. These skills will help you make your websites more professional, interactive, and user-friendly.",
+        "video_link": "https://www.youtube.com/watch?v=1PnVor36_40",
+        "mcq_questions": [
+          {
+            "question": "What is a key reason to learn advanced HTML and CSS?",
+            "options": [
+              "A) To change text color",
+              "B) To create more interactive and responsive websites",
+              "C) To avoid using JavaScript",
+              "D) To write less HTML code"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Using Semantic HTML for Better Structure",
+        "text": "Semantic HTML refers to using HTML elements according to their meaning rather than purely for styling purposes. For example, instead of using `<div>` tags for everything, you should use semantic elements like `<header>`, `<section>`, `<article>`, and `<footer>`. This not only improves the structure of your page but also helps with SEO and accessibility.",
+        "code_example": [
+          {
+            "filename": "Semantic HTML Example",
+            "code": "<header>\n  <h1>Welcome to My Blog</h1>\n</header>\n<section>\n  <article>\n    <h2>My First Post</h2>\n    <p>This is an amazing blog post!</p>\n  </article>\n</section>\n<footer>\n  <p>&copy; 2024 My Blog</p>\n</footer>"
+          }
+        ],
+        "additional_text": "Using these semantic elements makes your page easier to read for both developers and search engines. It also enhances accessibility by making it easier for screen readers to understand the structure of your website."
+      },
+      {
+        "subheading": "Understanding Advanced CSS Selectors",
+        "text": "CSS selectors allow you to target HTML elements in a more specific way. Beyond basic selectors like classes (`.`) and IDs (`#`), there are advanced selectors that give you more control, such as attribute selectors, pseudo-classes, and combinators. These advanced selectors help in creating more flexible and reusable styles.",
+        "code_example": [
+          {
+            "filename": "Advanced CSS Selectors",
+            "code": "/* Select an element with a specific attribute */\ninput[type=\"text\"] {\n  border: 1px solid black;\n}\n\n/* Target the first child of an element */\n.container:first-child {\n  background-color: lightblue;\n}\n\n/* Style all links that have not been visited */\na:link {\n  color: blue;\n}"
+          }
+        ],
+        "additional_text": "Advanced selectors let you create more precise rules without adding extra classes or IDs in your HTML. This keeps your code clean and efficient."
+      },
+      {
+        "subheading": "CSS Grid Layout for Complex Designs",
+        "text": "CSS Grid is a powerful layout system for creating complex, two-dimensional layouts with ease. Unlike Flexbox, which is ideal for one-dimensional layouts, Grid allows you to manage both rows and columns simultaneously. Let’s build a simple grid layout using Grid’s capabilities.",
+        "code_example": [
+          {
+            "filename": "CSS Grid Example",
+            "code": "/* Creating a 3-column grid layout */\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 10px;\n}\n\n.item {\n  background-color: lightgray;\n  padding: 20px;\n  text-align: center;\n}"
+          }
+        ],
+        "additional_text": "This CSS will create a container with three equal-width columns and a 10-pixel gap between each item. You can easily adjust the number of columns or rows by changing the `grid-template-columns` or `grid-template-rows` properties."
+      },
+      {
+        "subheading": "Responsive Design with Media Queries",
+        "text": "In today's world, websites need to work well on various screen sizes, from large desktop monitors to small mobile devices. Media queries allow you to apply different styles depending on the device's screen width. This makes your website more flexible and user-friendly.",
+        "code_example": [
+          {
+            "filename": "Media Queries Example",
+            "code": "/* Styles for devices with a width of 600px or less */\n@media (max-width: 600px) {\n  .container {\n    grid-template-columns: 1fr;\n  }\n\n  .item {\n    padding: 10px;\n  }\n}"
+          }
+        ],
+        "additional_text": "This media query changes the grid layout to a single column on small screens, making the design more responsive. You can create multiple breakpoints to adjust the layout for different screen sizes."
+      },
+      {
+        "subheading": "Using CSS Variables for Reusability",
+        "text": "CSS variables, also known as custom properties, allow you to define values that can be reused throughout your stylesheet. This makes it easier to manage and maintain your styles, especially when you need to change a value in multiple places.",
+        "code_example": [
+          {
+            "filename": "CSS Variables Example",
+            "code": ":root {\n  --primary-color: #3498db;\n  --padding-size: 20px;\n}\n\n.container {\n  background-color: var(--primary-color);\n  padding: var(--padding-size);\n}"
+          }
+        ],
+        "additional_text": "Here, the primary color and padding size are defined once as variables, and then reused in the `.container` class. This makes your code easier to update and ensures consistency across your styles."
+      },
+      {
+        "subheading": "Accessibility in Advanced HTML and CSS",
+        "text": "Ensuring your website is accessible means making it usable for people with disabilities, such as those who rely on screen readers. Simple practices like adding `alt` attributes to images, using semantic HTML, and ensuring good contrast between text and background colors can greatly improve your site's accessibility.",
+        "code_example": [
+          {
+            "filename": "Accessible HTML Example",
+            "code": "<img src=\"logo.png\" alt=\"Company Logo\">\n\n<button aria-label=\"Close Menu\">&times;</button>"
+          }
+        ],
+        "additional_text": "The `alt` attribute on the image describes the content for screen readers, and the `aria-label` on the button provides extra context for users who can't see the button."
+      },
+      {
+        "subheading": "CSS Transitions and Animations for Better User Experience",
+        "text": "CSS transitions and animations make your website feel more dynamic and interactive. With a few lines of CSS, you can animate hover effects, buttons, and other elements to improve the user experience.",
+        "code_example": [
+          {
+            "filename": "CSS Transition Example",
+            "code": "button {\n  background-color: #3498db;\n  transition: background-color 0.3s ease;\n}\n\nbutton:hover {\n  background-color: #2980b9;\n}"
+          },
+          {
+            "filename": "CSS Keyframes Animation Example",
+            "code": "@keyframes slideIn {\n  from {\n    transform: translateX(-100%);\n  }\n  to {\n    transform: translateX(0);\n  }\n}\n\n.element {\n  animation: slideIn 1s ease-in-out;\n}"
+          }
+        ],
+        "additional_text": "The first example shows a simple hover transition that smoothly changes the button's background color when the user hovers over it. The second example uses keyframes to animate an element sliding into view from the left."
+      },
+      {
+        "subheading": "Wrapping Up: What's Next?",
+        "text": "With these advanced HTML and CSS techniques, you’re now ready to build more sophisticated websites. You’ve learned about semantic HTML, advanced CSS selectors, responsive design, and how to create visually engaging websites using animations and transitions. The next step is to dive into frameworks like Bootstrap or dive into JavaScript for more interactive web applications."
+      }
+    ]
+  }
+  

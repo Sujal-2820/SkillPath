@@ -1,0 +1,141 @@
+{
+      "title": "Introduction to Node.js and Express.js",
+      "description": "In this module, we'll take you through the basics of Node.js and Express.js. You'll learn how to set up a simple web server using Node.js and Express.js with easy-to-follow steps. We will provide code examples and video links for more clarity.",
+      "video_link": [
+        {
+          "text": "Introduction to Node.js",
+          "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4"
+        },
+        {
+          "text": "Setting up Express.js",
+          "url": "https://www.youtube.com/watch?v=L72fhGm1tfE"
+        }
+      ],
+      "content": [
+        {
+          "subheading": "What is Node.js and Express.js?",
+          "text": "Node.js is a runtime that allows JavaScript to run outside the browser, mainly for server-side applications. Express.js is a framework built on top of Node.js to simplify creating web applications.",
+          "additional_text": "Node.js is especially useful for building scalable, fast web applications. Express.js, on the other hand, helps in setting up routes, handling requests, and creating server logic easily.",
+          "key_points": [
+            "Node.js: Run JavaScript on the server",
+            "Express.js: Build web applications faster with predefined tools"
+          ]
+        },
+        {
+          "subheading": "Step 1: Installing Node.js",
+          "text": "Let's start by installing Node.js on your machine.",
+          "steps": [
+            {
+              "step": "1. Go to the official Node.js website (https://nodejs.org) and download the version suited for your operating system.",
+              "description": "Download the installer and follow the instructions to install Node.js. This also installs npm (Node Package Manager), which helps manage libraries and dependencies."
+            },
+            {
+              "step": "2. Verify installation by running this command in your terminal:",
+              "code_example": "node -v",
+              "description": "If everything is set up correctly, you will see the Node.js version number."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "How to Install Node.js",
+              "url": "https://www.youtube.com/watch?v=ENrzD9HAZK4"
+            }
+          ]
+        },
+        {
+          "subheading": "Step 2: Setting Up a Project",
+          "text": "Now, let's set up a new Node.js project and install Express.js.",
+          "steps": [
+            {
+              "step": "1. Create a new project folder by running the following commands in the terminal:",
+              "code_example": "mkdir my-app\ncd my-app",
+              "description": "This creates a new directory named 'my-app' and navigates into it."
+            },
+            {
+              "step": "2. Initialize a new Node.js project by typing:",
+              "code_example": "npm init -y",
+              "description": "This generates a `package.json` file, which stores information about your project and its dependencies."
+            },
+            {
+              "step": "3. Install Express.js with npm by running:",
+              "code_example": "npm install express",
+              "description": "This will download and install Express.js into your project."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "How to Set Up a Node.js and Express.js Project",
+              "url": "https://www.youtube.com/watch?v=L72fhGm1tfE"
+            }
+          ]
+        },
+        {
+          "subheading": "Step 3: Creating Your First Web Server",
+          "text": "Let's write some code to create a basic web server using Express.js.",
+          "steps": [
+            {
+              "step": "1. Create a new file called `server.js` in your project folder.",
+              "description": "This file will hold the code for your web server."
+            },
+            {
+              "step": "2. Write the following code inside `server.js`:",
+              "code_example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello, World!');\n});\n\napp.listen(3000, () => {\n  console.log('Server running at http://localhost:3000');\n});",
+              "description": "This sets up a simple Express.js server that listens on port 3000 and responds with 'Hello, World!' when you visit the home page."
+            },
+            {
+              "step": "3. Run your server by typing this in the terminal:",
+              "code_example": "node server.js",
+              "description": "Open your web browser and visit `http://localhost:3000`. You should see the message 'Hello, World!'."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Creating Your First Web Server with Express.js",
+              "url": "https://www.youtube.com/watch?v=-lRgL9kj_h0"
+            }
+          ]
+        },
+        {
+          "subheading": "Step 4: Adding More Pages (Routes)",
+          "text": "Now, let's add an extra page like an 'About' page.",
+          "steps": [
+            {
+              "step": "1. In `server.js`, add this code for an 'About' page:",
+              "code_example": "app.get('/about', (req, res) => {\n  res.send('About Us');\n});",
+              "description": "This code creates a route for the '/about' URL and sends 'About Us' as a response."
+            },
+            {
+              "step": "2. Restart your server and visit `http://localhost:3000/about`.",
+              "description": "You should see the text 'About Us' on this new page."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "How to Add Routes in Express.js",
+              "url": "https://www.youtube.com/watch?v=gnsO8-xJ8rs"
+            }
+          ]
+        },
+        {
+          "subheading": "Step 5: Understanding Middleware",
+          "text": "Middleware is a function that runs before the final response is sent to the client. It can be used to log requests, check authentication, and more.",
+          "steps": [
+            {
+              "step": "1. Add this code to `server.js` to log every request:",
+              "code_example": "app.use((req, res, next) => {\n  console.log('Requested URL:', req.url);\n  next();\n});",
+              "description": "This middleware logs the URL of every incoming request."
+            },
+            {
+              "step": "2. Restart your server and visit any page. You’ll see the requested URL logged in your terminal."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Understanding Middleware in Express.js",
+              "url": "https://www.youtube.com/watch?v=lY6icfhap2o"
+            }
+          ]
+        }
+      ]
+  }
+  

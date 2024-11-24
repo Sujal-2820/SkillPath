@@ -1,0 +1,79 @@
+{
+  "module": "Regression Analysis",
+  "introduction": {
+    "text": "Regression analysis is a powerful statistical technique used in machine learning to model and analyze relationships between dependent and independent variables. In machine learning, regression helps predict continuous outcomes such as prices, sales, or scores. The focus is on understanding how the dependent variable changes when any of the independent variables are modified.",
+    "additional_text": "This method is foundational in predictive modeling, helping in various domains such as economics, finance, healthcare, and more."
+  },
+  "sections": [
+    {
+      "subheading": {
+        "title": "Understanding Linear Regression",
+        "text": "Linear regression is the simplest form of regression. It attempts to model the relationship between two variables by fitting a linear equation to observed data.",
+        "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Sample Data\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([5, 7, 9, 11, 13])\n\n# Model\nmodel = LinearRegression().fit(X, y)\n\n# Prediction\nprediction = model.predict([[6]])\nprint(prediction)",
+        "additional_text": "In the above code, we use a linear regression model from the `sklearn` library to predict the value of 'y' for an 'x' input of 6. The relationship between the variables is linear, with 'x' predicting 'y' along a straight line.",
+        "video_link": "https://www.youtube.com/watch?v=ZkjP5RJLQF4",
+        "quiz": {
+          "question": "What is the goal of Linear Regression?",
+          "options": ["Classify data points", "Model relationships between variables", "Cluster similar data points", "Reduce dimensionality"],
+          "correct_answer": "Model relationships between variables"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Multiple Linear Regression",
+        "text": "Multiple Linear Regression is an extension of simple linear regression. It models the relationship between a dependent variable and two or more independent variables.",
+        "code": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Sample Data\nX = np.array([[1, 1], [2, 1], [3, 2], [4, 2], [5, 3]])\ny = np.array([5, 6, 7, 9, 11])\n\n# Model\nmodel = LinearRegression().fit(X, y)\n\n# Prediction\nprediction = model.predict([[6, 3]])\nprint(prediction)",
+        "additional_text": "In this example, we are using two independent variables to predict the dependent variable 'y'. The model attempts to capture the combined effect of both variables on the output.",
+        "video_link": "https://www.youtube.com/watch?v=J_LnPL3Qg70",
+        "quiz": {
+          "question": "In Multiple Linear Regression, how many independent variables are used?",
+          "options": ["1", "2", "3 or more", "None"],
+          "correct_answer": "3 or more"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Assumptions of Linear Regression",
+        "text": "For regression models to be effective, several assumptions should be met. These assumptions include linearity, independence, homoscedasticity, and normality.",
+        "code": "import statsmodels.api as sm\n\n# OLS Model Assumption Test\nX = sm.add_constant(X)  # Adding a constant\nmodel = sm.OLS(y, X).fit()\nprint(model.summary())",
+        "additional_text": "Using the `statsmodels` library, we can generate a summary of our regression model that includes key statistical information to assess the model's performance and check these assumptions.",
+        "video_link": "https://www.youtube.com/watch?v=zPG4NjIkCjc",
+        "quiz": {
+          "question": "Which of the following is not an assumption of Linear Regression?",
+          "options": ["Linearity", "Normality", "Heteroscedasticity", "Independence"],
+          "correct_answer": "Heteroscedasticity"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Polynomial Regression",
+        "text": "Polynomial regression extends linear regression by considering polynomial relationships between the variables. It helps capture non-linear patterns that linear regression cannot.",
+        "code": "from sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.linear_model import LinearRegression\n\n# Sample Data\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([1, 4, 9, 16, 25])\n\n# Transform the data for Polynomial Regression\npoly = PolynomialFeatures(degree=2)\nX_poly = poly.fit_transform(X)\n\n# Model\nmodel = LinearRegression().fit(X_poly, y)\n\n# Prediction\nprediction = model.predict(poly.fit_transform([[6]]))\nprint(prediction)",
+        "additional_text": "In this case, a quadratic relationship is modeled. Polynomial regression can model more complex relationships by increasing the degree of the polynomial.",
+        "video_link": "https://www.youtube.com/watch?v=ngF1o9pGxQo",
+        "quiz": {
+          "question": "What kind of relationships does Polynomial Regression capture?",
+          "options": ["Linear", "Non-linear", "Logarithmic", "Exponential"],
+          "correct_answer": "Non-linear"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Regularization in Regression (Lasso and Ridge)",
+        "text": "Regularization methods like Lasso and Ridge regression are used to prevent overfitting by adding a penalty for large coefficients in the regression model.",
+        "code": "from sklearn.linear_model import Ridge\n\n# Sample Data\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([5, 7, 9, 11, 13])\n\n# Model with Ridge Regularization\nmodel = Ridge(alpha=1.0).fit(X, y)\n\n# Prediction\nprediction = model.predict([[6]])\nprint(prediction)",
+        "additional_text": "Ridge regression adds a penalty term proportional to the square of the coefficients, reducing their magnitude and improving generalization of the model.",
+        "video_link": "https://www.youtube.com/watch?v=Q81RR3yKn30",
+        "quiz": {
+          "question": "What is the purpose of Regularization in regression?",
+          "options": ["Increase model complexity", "Reduce model complexity", "Increase overfitting", "Reduce underfitting"],
+          "correct_answer": "Reduce model complexity"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+    
+      "title": "Database Integration: MongoDB with Node.js",
+      "description": "This module introduces how to integrate MongoDB, a NoSQL database, with a Node.js/Express.js web application. You will learn how to connect your application to a MongoDB database, define schemas, and perform basic CRUD operations.",
+      "video_link": [
+        {
+          "text": "MongoDB Crash Course",
+          "url": "https://www.youtube.com/watch?v=pWbMrx5rVBE"
+        }
+      ],
+      "content": [
+        {
+          "subheading": "What is MongoDB?",
+          "text": "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. Unlike relational databases, MongoDB does not require a predefined schema, making it great for dynamic and scalable applications.",
+          "additional_text": "In MongoDB, data is stored in collections of documents, where each document can have different fields, providing a lot of flexibility.",
+          "key_points": [
+            "NoSQL: Does not use tables, rows, and columns like relational databases.",
+            "JSON-like Documents: Stores data as BSON (Binary JSON).",
+            "Collections: Group of documents, similar to tables in SQL databases."
+          ],
+          "video_link": [
+            {
+              "text": "Introduction to MongoDB",
+              "url": "https://www.youtube.com/watch?v=-56x56UppqQ"
+            }
+          ]
+        },
+        {
+          "subheading": "Installing MongoDB and Mongoose",
+          "text": "To integrate MongoDB into a Node.js application, you'll need to install MongoDB locally or use a cloud provider like MongoDB Atlas. For Node.js applications, the Mongoose library is typically used to interact with MongoDB.",
+          "steps": [
+            {
+              "step": "1. Install MongoDB on your local machine or set up a cloud instance via MongoDB Atlas (https://www.mongodb.com/cloud/atlas).",
+              "description": "If you're using MongoDB locally, ensure that the MongoDB service is running on your machine."
+            },
+            {
+              "step": "2. In your Node.js project, install Mongoose by running this command in your terminal:",
+              "code_example": "npm install mongoose",
+              "description": "Mongoose is an ODM (Object Data Modeling) library that provides a schema-based solution for MongoDB."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Installing MongoDB and Mongoose",
+              "url": "https://www.youtube.com/watch?v=Eo-ykm1Fjzk"
+            }
+          ]
+        },
+        {
+          "subheading": "Connecting to MongoDB",
+          "text": "To connect your Node.js application to MongoDB, you'll use Mongoose to establish a connection with the database. Here's how you can do it.",
+          "steps": [
+            {
+              "step": "1. Create a file named `db.js` or add the following code to your main server file:",
+              "code_example": "const mongoose = require('mongoose');\n\nmongoose.connect('mongodb://localhost:27017/myapp', {\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n}).then(() => {\n  console.log('MongoDB connected');\n}).catch(err => {\n  console.log('Failed to connect to MongoDB', err);\n});",
+              "description": "This code connects to a MongoDB instance running locally on your machine. Replace 'myapp' with the name of your database."
+            }
+          ],
+          "additional_text": "In case you are using MongoDB Atlas, the connection URL will include the username, password, and cluster information. You'll find the connection string in the MongoDB Atlas dashboard."
+        },
+        {
+          "subheading": "Defining a Mongoose Schema",
+          "text": "Mongoose allows you to define schemas that outline the structure of your MongoDB documents. A schema defines the fields and types in the documents within a collection.",
+          "steps": [
+            {
+              "step": "1. Define a schema for a user by creating a new file `models/User.js`:",
+              "code_example": "const mongoose = require('mongoose');\n\nconst UserSchema = new mongoose.Schema({\n  name: {\n    type: String,\n    required: true\n  },\n  email: {\n    type: String,\n    required: true\n  },\n  password: {\n    type: String,\n    required: true\n  }\n});\n\nmodule.exports = mongoose.model('User', UserSchema);",
+              "description": "Here, we define a simple User schema with three fields: name, email, and password, all of which are required."
+            },
+            {
+              "step": "2. Once the schema is defined, you can use it to create and interact with User documents in the MongoDB database."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "Mongoose Schema Basics",
+              "url": "https://www.youtube.com/watch?v=WDrU305J1yw"
+            }
+          ]
+        },
+        {
+          "subheading": "CRUD Operations with MongoDB",
+          "text": "Once you've connected your application and defined a schema, you can perform CRUD (Create, Read, Update, Delete) operations using Mongoose.",
+          "additional_text": "Mongoose provides built-in methods to interact with MongoDB collections, allowing you to easily perform CRUD operations.",
+          "steps": [
+            {
+              "step": "Create a New Document",
+              "code_example": "const User = require('./models/User');\n\nconst newUser = new User({\n  name: 'John Doe',\n  email: 'john@example.com',\n  password: 'securepassword'\n});\n\nnewUser.save().then(user => {\n  console.log('User created:', user);\n}).catch(err => {\n  console.error('Error creating user:', err);\n});",
+              "description": "This creates a new document in the `users` collection of your MongoDB database."
+            },
+            {
+              "step": "Read Documents",
+              "code_example": "User.find().then(users => {\n  console.log('All users:', users);\n}).catch(err => {\n  console.error('Error fetching users:', err);\n});",
+              "description": "This retrieves all documents from the `users` collection."
+            },
+            {
+              "step": "Update a Document",
+              "code_example": "User.findOneAndUpdate({ email: 'john@example.com' }, { name: 'John Smith' }, { new: true })\n.then(user => {\n  console.log('Updated user:', user);\n}).catch(err => {\n  console.error('Error updating user:', err);\n});",
+              "description": "This updates the name field of the user document with the specified email."
+            },
+            {
+              "step": "Delete a Document",
+              "code_example": "User.findOneAndDelete({ email: 'john@example.com' })\n.then(result => {\n  console.log('User deleted:', result);\n}).catch(err => {\n  console.error('Error deleting user:', err);\n});",
+              "description": "This deletes the user document with the specified email."
+            }
+          ],
+          "video_link": [
+            {
+              "text": "CRUD Operations in Mongoose",
+              "url": "https://www.youtube.com/watch?v=kHt7Rxqwv2w"
+            }
+          ]
+        },
+        {
+          "subheading": "Handling Errors and Validation",
+          "text": "Mongoose provides built-in validation to ensure that documents meet the schema requirements before being saved to the database.",
+          "steps": [
+            {
+              "step": "1. For example, if a user tries to save a document without the required `email` field, Mongoose will throw a validation error:",
+              "code_example": "const invalidUser = new User({ name: 'Jane Doe' });\n\ninvalidUser.save().catch(err => {\n  console.error('Validation Error:', err.message);\n});",
+              "description": "Since `email` is required in the schema, Mongoose will prevent this document from being saved."
+            }
+          ],
+          "additional_text": "You can define custom validation logic in your schema to ensure that the data is always correct before being stored."
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What is the purpose of Mongoose in a Node.js application?",
+              "options": ["A library to create web servers", "An ORM for MongoDB", "A front-end framework", "A CSS styling library"],
+              "answer": "An ORM for MongoDB"
+            },
+            {
+              "question": "Which method is used to save a new document to MongoDB using Mongoose?",
+              "options": ["find()", "save()", "create()", "remove()"],
+              "answer": "save()"
+            },
+            {
+              "question": "What type of data does MongoDB store?",
+              "options": ["Relational data in tables", "Documents in JSON format", "XML data", "Binary data"],
+              "answer": "Documents in JSON format"
+            }
+          ]
+        }
+      ]
+    
+  }
+  

@@ -1,0 +1,166 @@
+{
+      "title": "Introduction to Web Development with Node.js and Express.js",
+      "description": "This module is designed to help beginners learn how to use Node.js and Express.js to create simple web applications. You will start by setting up your environment, and then build a basic server, handle routes, work with middleware, and create a simple API to interact with a database.",
+      "content": [
+        {
+          "subheading": "What is Node.js and Express.js?",
+          "text": "Node.js allows JavaScript to be run outside the browser, making it possible to build server-side applications. Express.js is a web framework for Node.js that simplifies handling web requests, routing, and server setup.",
+          "key_points": [
+            "Node.js lets you use JavaScript for backend (server-side) development.",
+            "Express.js helps organize your code and makes it easier to manage different parts of a web server."
+          ]
+        },
+        {
+          "subheading": "Setting Up Your Environment",
+          "text": "Before you start coding, you'll need to install Node.js and set up your project folder.",
+          "steps": [
+            {
+              "step": "1. Install Node.js",
+              "description": "Go to https://nodejs.org and download the latest version of Node.js. This will also install npm (Node Package Manager), which you will use to install other libraries like Express.",
+              "additional_text": "Once installed, open your terminal or command prompt and run the following command to check if Node.js was installed correctly:",
+              "code_example": "node -v"
+            },
+            {
+              "step": "2. Create a New Project Folder",
+              "description": "Create a folder for your project where you'll write all your code.",
+              "additional_text": "You can do this using the terminal by running the following commands:",
+              "code_example": "mkdir my-first-app\ncd my-first-app"
+            },
+            {
+              "step": "3. Initialize the Project",
+              "description": "Initialize your project by creating a `package.json` file. This file helps manage your project's dependencies.",
+              "additional_text": "Run this command in your project folder:",
+              "code_example": "npm init -y"
+            },
+            {
+              "step": "4. Install Express",
+              "description": "Now that your project is set up, install Express.js to help you build your server.",
+              "code_example": "npm install express"
+            }
+          ]
+        },
+        {
+          "subheading": "Creating Your First Express Server",
+          "text": "Let's create a basic Express server that will send a message when someone visits your website.",
+          "steps": [
+            {
+              "step": "1. Create a Server File",
+              "description": "Create a new file called `server.js` inside your project folder. This is where you'll write the code for your server.",
+              "code_example": "touch server.js"
+            },
+            {
+              "step": "2. Write Basic Server Code",
+              "description": "Now, open the `server.js` file in your code editor and add the following code to create a simple server that responds with 'Hello, World!' when visited.",
+              "code_example": "const express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello, World!');\n});\n\napp.listen(3000, () => {\n  console.log('Server is running on http://localhost:3000');\n});"
+            },
+            {
+              "step": "3. Run the Server",
+              "description": "To run your server, type the following command in your terminal:",
+              "code_example": "node server.js",
+              "additional_text": "Open a browser and go to `http://localhost:3000`. You should see 'Hello, World!' on the page."
+            }
+          ]
+        },
+        {
+          "subheading": "Handling Routes in Express",
+          "text": "Routes allow you to define different pages or actions that happen when users visit different URLs on your website. Let's create some additional routes.",
+          "steps": [
+            {
+              "step": "1. Add a New Route",
+              "description": "In the `server.js` file, add a route for an 'About' page. This new route will display a different message.",
+              "code_example": "app.get('/about', (req, res) => {\n  res.send('This is the About page');\n});"
+            },
+            {
+              "step": "2. Add a Dynamic Route",
+              "description": "You can also create routes with dynamic parameters. For example, if you want to display different content based on a user ID, you can do something like this:",
+              "code_example": "app.get('/user/:id', (req, res) => {\n  const userId = req.params.id;\n  res.send(`User ID: ${userId}`);\n});",
+              "additional_text": "Now, if you visit `http://localhost:3000/user/123`, you'll see 'User ID: 123'."
+            }
+          ]
+        },
+        {
+          "subheading": "Introduction to Middleware",
+          "text": "Middleware is a function that runs before your request handler. You can use middleware to process data, check if users are logged in, or log requests. Express has built-in middleware, but you can also create your own.",
+          "steps": [
+            {
+              "step": "1. Use Built-in Middleware",
+              "description": "Add some middleware to parse incoming request data. This will allow you to handle data sent in a POST request, for example, from a form.",
+              "code_example": "app.use(express.json());\napp.use(express.urlencoded({ extended: true }));"
+            },
+            {
+              "step": "2. Create Custom Middleware",
+              "description": "Let's create a simple custom middleware that logs each incoming request to your server.",
+              "code_example": "app.use((req, res, next) => {\n  console.log('Request URL:', req.url);\n  next(); // Pass control to the next middleware or route\n});",
+              "additional_text": "This middleware will log the URL of every request made to the server."
+            }
+          ]
+        },
+        {
+          "subheading": "Working with a Database",
+          "text": "To store data for your application, you'll need to connect to a database. MongoDB is a popular choice for Node.js applications. You'll use Mongoose, a tool that helps you interact with MongoDB.",
+          "steps": [
+            {
+              "step": "1. Install Mongoose",
+              "description": "First, you need to install Mongoose to help manage your database connection and models.",
+              "code_example": "npm install mongoose"
+            },
+            {
+              "step": "2. Connect to MongoDB",
+              "description": "Set up a connection to a MongoDB database. If you don't have MongoDB installed, you can sign up for a free account on MongoDB Atlas.",
+              "code_example": "const mongoose = require('mongoose');\nmongoose.connect('mongodb://localhost/mydatabase', {\n  useNewUrlParser: true,\n  useUnifiedTopology: true\n}).then(() => console.log('Connected to MongoDB'));",
+              "additional_text": "This code connects your app to a MongoDB database running locally."
+            },
+            {
+              "step": "3. Define a Schema and Model",
+              "description": "A schema defines the structure of your data. Let's create a simple schema for a 'Task' in our app.",
+              "code_example": "const taskSchema = new mongoose.Schema({\n  title: String,\n  completed: Boolean\n});\nconst Task = mongoose.model('Task', taskSchema);",
+              "additional_text": "This schema defines that a 'Task' will have a title and a completed status (true or false)."
+            },
+            {
+              "step": "4. Save Data to MongoDB",
+              "description": "Now, let's add a route to save a task to the database when a POST request is made.",
+              "code_example": "app.post('/tasks', async (req, res) => {\n  const newTask = new Task(req.body);\n  await newTask.save();\n  res.send('Task saved');\n});",
+              "additional_text": "You can now send a POST request with task data, and it will be saved in MongoDB."
+            },
+            {
+              "step": "5. Retrieve Data from MongoDB",
+              "description": "Let's also add a route to retrieve all tasks from the database.",
+              "code_example": "app.get('/tasks', async (req, res) => {\n  const tasks = await Task.find();\n  res.json(tasks);\n});"
+            }
+          ]
+        },
+        {
+          "subheading": "Basic User Authentication",
+          "text": "Authentication is the process of verifying a user's identity. We'll create a simple login system using passwords. For security, we'll use a library to hash passwords so they're not stored in plain text.",
+          "steps": [
+            {
+              "step": "1. Install Required Packages",
+              "description": "Install `bcryptjs` for password hashing and `jsonwebtoken` for generating tokens.",
+              "code_example": "npm install bcryptjs jsonwebtoken"
+            },
+            {
+              "step": "2. Register New Users",
+              "description": "Add a route to register users by hashing their passwords before saving them.",
+              "code_example": "const bcrypt = require('bcryptjs');\napp.post('/register', async (req, res) => {\n  const hashedPassword = await bcrypt.hash(req.body.password, 10);\n  // Save user with hashed password to DB\n  res.send('User registered');\n});"
+            },
+            {
+              "step": "3. Login Users",
+              "description": "Allow users to log in by checking if their password matches the hashed password in the database.",
+              "code_example": "app.post('/login', async (req, res) => {\n  const user = await User.findOne({ email: req.body.email });\n  if (user && await bcrypt.compare(req.body.password, user.password)) {\n    res.send('Login successful');\n  } else {\n    res.status(400).send('Invalid credentials');\n  }\n});"
+            }
+          ]
+        },
+        {
+          "subheading": "Conclusion",
+          "text": "By following this module, you've learned how to build a simple web application using Node.js and Express.js. You now know how to set up a server, handle routes, use middleware, connect to a database, and create a basic authentication system.",
+          "key_points": [
+            "Node.js and Express.js make it easy to build scalable web applications.",
+            "Routing allows you to handle different URLs in your app.",
+            "Middleware helps manage requests and responses, making your app more organized.",
+            "You can interact with databases like MongoDB to store and retrieve data.",
+            "Adding authentication ensures that only registered users can access certain parts of your app."
+          ]
+        }
+      ]
+  }
+  

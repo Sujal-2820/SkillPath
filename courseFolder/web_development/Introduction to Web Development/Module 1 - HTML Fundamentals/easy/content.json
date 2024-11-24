@@ -1,0 +1,78 @@
+{
+    "title": "Getting Started with HTML: A Beginner's Guide",
+    "content": [
+      {
+        "subheading": "Introduction to HTML",
+        "text": "HTML stands for HyperText Markup Language. It is the standard language used to create web pages. HTML uses 'tags' to structure the content on a web page, allowing browsers to display text, images, and other elements correctly. Every web page you see is made up of HTML code.",
+        "code_example": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Web Page</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n    <p>This is my first web page created using HTML!</p>\n</body>\n</html>",
+        "video_link": "https://youtu.be/it1rTvBcfRg?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "What does HTML stand for?",
+            "options": [
+              "A) HyperText Markup Language",
+              "B) Hyperlink and Text Markup Language",
+              "C) HyperText Multilayer Language",
+              "D) None of the above"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      {
+        "subheading": "Understanding HTML Tags",
+        "text": "HTML is made up of elements that are defined using tags. Tags are keywords surrounded by angle brackets, like <tagname>. Most tags come in pairs: an opening tag and a closing tag. The content goes between these tags. For example, <p>This is a paragraph.</p> creates a paragraph.",
+        "code_example": "<h1>This is a Heading</h1>\n<p>This is a paragraph of text.</p>",
+        "video_link": "https://youtu.be/jNN08DbgAGQ?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "Which of the following correctly represents a paragraph in HTML?",
+            "options": [
+              "A) <p>This is a paragraph.</p>",
+              "B) <paragraph>This is a paragraph.</paragraph>",
+              "C) (p)This is a paragraph.(/p)",
+              "D) <para>This is a paragraph.</para>"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      },
+      {
+        "subheading": "Organizing Content with HTML",
+        "text": "HTML allows you to organize your content using various tags. Headings are defined with <h1> to <h6>, where <h1> is the largest and <h6> is the smallest. You can also use <div> to group related content together, helping to keep your code organized.",
+        "code_example": "<h2>My Blog Post</h2>\n<p>This is the introduction of my blog post.</p>\n<div>\n    <p>This paragraph is part of a div, used to group related content.</p>\n</div>",
+        "video_link": "https://youtu.be/D7Izxc6am9E?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "What is the purpose of a <div> tag in HTML?",
+            "options": [
+              "A) To define a heading",
+              "B) To create a division or section in a document",
+              "C) To add a paragraph",
+              "D) To create a list"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Creating Lists in HTML",
+        "text": "You can create two types of lists in HTML: ordered lists (<ol>) and unordered lists (<ul>). Ordered lists use numbers for each item, while unordered lists use bullet points. Both lists contain list items, which are defined with the <li> tag.",
+        "code_example": "<h3>My Favorite Fruits</h3>\n<ol>\n    <li>Apple</li>\n    <li>Banana</li>\n    <li>Cherry</li>\n</ol>\n\n<h3>Shopping List</h3>\n<ul>\n    <li>Milk</li>\n    <li>Bread</li>\n    <li>Eggs</li>\n</ul>",
+        "video_link": "https://youtu.be/-kXZvKxs9oA?feature=shared",
+        "mcq_questions": [
+          {
+            "question": "Which tag is used to create an ordered list in HTML?",
+            "options": [
+              "A) <ul>",
+              "B) <ol>",
+              "C) <li>",
+              "D) <list>"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      }
+    ]
+  }
+  

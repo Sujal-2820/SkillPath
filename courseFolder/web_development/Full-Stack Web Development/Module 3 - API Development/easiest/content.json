@@ -1,0 +1,112 @@
+{
+      "title": "API Development: Creating Easy RESTful APIs",
+      "description": "Welcome to the world of APIs! In this module, we will learn how to make simple RESTful APIs using Node.js and Express.js. REST stands for Representational State Transfer, and it’s a way to let different applications talk to each other. Let’s dive into how we can build our own API!",
+      "video_link": "https://www.youtube.com/watch?v=G1rKml4H7Zw",
+      "content": [
+        {
+          "subheading": "What is an API?",
+          "text": "An API, or Application Programming Interface, is like a waiter in a restaurant. Just as a waiter takes your order and brings your food, an API takes your request and gives you the data you want from a server.",
+          "additional_text": "APIs allow different programs to communicate with each other, making it easier for developers to create applications."
+        },
+        {
+          "subheading": "Understanding REST",
+          "text": "REST APIs use standard commands that we already know. Here are the basic commands we use:",
+          "key_points": [
+            "GET: This command is used to ask for data, like asking for a list of users.",
+            "POST: This command is used to create new data, like adding a new user.",
+            "PUT: This command updates existing data, like changing a user's name.",
+            "DELETE: This command removes data, like deleting a user."
+          ],
+          "more_additional_text": "These commands are simple to understand and use, making it easy to manage data."
+        },
+        {
+          "subheading": "Setting Up Your Project",
+          "text": "Let's start by setting up our project step by step. Follow these instructions:",
+          "steps": [
+            {
+              "step": "Create a new folder for your project:",
+              "code_example": "mkdir my-easy-api && cd my-easy-api"
+            },
+            {
+              "step": "Initialize a Node.js project by creating a package.json file:",
+              "code_example": "npm init -y",
+              "description": "This command sets up your project and gives it a name."
+            },
+            {
+              "step": "Install Express.js, a framework for making APIs:",
+              "code_example": "npm install express",
+              "description": "Express helps us build our API quickly and easily."
+            }
+          ],
+          "additional_text": "By following these steps, you’ll have everything ready to start coding!"
+        },
+        {
+          "subheading": "Creating Your First API",
+          "text": "Now, let’s write some code to create our first API. Create a file named `app.js` and add the following code:",
+          "code_example": [
+            "const express = require('express');",
+            "const app = express();",
+            "const PORT = 3000;",
+            "",
+            "app.use(express.json());",
+            "",
+            "// Sample data: a list of users",
+            "let users = [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }];",
+            "",
+            "// Get all users",
+            "app.get('/api/users', (req, res) => {",
+            "  res.json(users);",
+            "});",
+            "",
+            "// Create a new user",
+            "app.post('/api/users', (req, res) => {",
+            "  const newUser = { id: users.length + 1, name: req.body.name };",
+            "  users.push(newUser);",
+            "  res.status(201).json(newUser);",
+            "});",
+            "",
+            "// Start the server",
+            "app.listen(PORT, () => {",
+            "  console.log(`Server is running on port ${PORT}`);",
+            "});"
+          ],
+          "additional_text": "This code sets up a basic API that allows you to get a list of users and add new users."
+        },
+        {
+          "subheading": "Testing Your API",
+          "text": "You can test your API using tools like Postman. Here’s how to test it:",
+          "key_points": [
+            "GET /api/users: This command will show you the list of users.",
+            "POST /api/users: To add a new user, send a JSON object like this: { 'name': 'New User' } in the request body."
+          ],
+          "more_additional_text": "Testing helps us see if our API is working correctly."
+        },
+        {
+          "subheading": "Handling Errors",
+          "text": "It’s important to handle errors to make our API user-friendly. If someone tries to go to a route that doesn’t exist, we can show a friendly message. Add this code to your `app.js` file:",
+          "code_example": "app.use((req, res) => {\n  res.status(404).send('Oops! Route not found.');\n});",
+          "additional_text": "This code will display a 404 error message if the user tries to access an invalid route."
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What does API stand for?",
+              "options": ["Application Programming Interface", "Application Programming Internet", "Application Program Interface", "Application Program Internet"],
+              "answer": "Application Programming Interface"
+            },
+            {
+              "question": "Which command do you use to get data?",
+              "options": ["GET", "ADD", "POST", "REMOVE"],
+              "answer": "GET"
+            },
+            {
+              "question": "What status code means that the resource was created successfully?",
+              "options": ["200", "201", "404", "500"],
+              "answer": "201"
+            }
+          ]
+        }
+      ]
+  }
+  

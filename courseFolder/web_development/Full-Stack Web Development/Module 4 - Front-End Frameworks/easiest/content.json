@@ -1,0 +1,113 @@
+{
+      "title": "Front-End Frameworks Made Simple",
+      "description": "In this module, we'll explore what front-end frameworks are, why they matter, and how to get started with one. Front-end frameworks can help you create beautiful and interactive websites easily!",
+      "video_link": "https://www.youtube.com/watch?v=6G9inBjX_CY",
+      "content": [
+        {
+          "subheading": "Understanding Front-End Frameworks",
+          "text": "A front-end framework is a set of tools that helps you build the part of a website that users see. Imagine building a house; the framework is like the frame that holds everything together. Without it, your house might fall down!",
+          "additional_text": "Front-end frameworks make web development faster and easier. They come with ready-made pieces you can use, so you don’t have to start from scratch every time."
+        },
+        {
+          "subheading": "Why Use Front-End Frameworks?",
+          "text": "Here are some simple reasons why using a front-end framework is a great idea:",
+          "key_points": [
+            "Faster Development: Frameworks provide ready-to-use components, saving you time.",
+            "Consistency: They help you keep your designs uniform, making your website look professional.",
+            "Easy Maintenance: If you need to change something, it’s usually straightforward.",
+            "Community Support: Many people use these frameworks, so you can find help and resources easily."
+          ],
+          "additional_text": "By using a front-end framework, you can focus more on creating great features instead of getting stuck on small details."
+        },
+        {
+          "subheading": "Popular Front-End Frameworks",
+          "text": "Let's look at some popular front-end frameworks that many developers love to use:",
+          "frameworks": [
+            {
+              "name": "React",
+              "description": "React is a library for building user interfaces. It allows you to create small, reusable pieces called components.",
+              "example": "For instance, you can create a button component and use it anywhere in your app without rewriting the code."
+            },
+            {
+              "name": "Angular",
+              "description": "Angular is a framework that offers a full solution for building web applications. It uses a programming language called TypeScript.",
+              "example": "With Angular, you can easily create complex apps with features like routing and forms."
+            },
+            {
+              "name": "Vue.js",
+              "description": "Vue.js is a flexible framework that is great for beginners. It's easy to learn and can be added to existing projects.",
+              "example": "You can use Vue.js to create interactive elements like dropdowns and modals."
+            }
+          ]
+        },
+        {
+          "subheading": "Getting Started with React",
+          "text": "Let’s learn how to create a simple React application step by step. Follow these easy instructions:",
+          "steps": [
+            {
+              "step": "Install Node.js",
+              "description": "Go to the official Node.js website and download it. Node.js lets you run JavaScript on your computer."
+            },
+            {
+              "step": "Create a New React App",
+              "code_example": "npx create-react-app my-app",
+              "description": "This command creates a new folder called `my-app` with all the files you need for a React project."
+            },
+            {
+              "step": "Go to Your Project",
+              "code_example": "cd my-app",
+              "description": "This command changes the directory to your project folder."
+            },
+            {
+              "step": "Run the App",
+              "code_example": "npm start",
+              "description": "This command will open your new React app in a web browser, and you can see it in action!"
+            }
+          ],
+          "additional_text": "Now you have a basic React application up and running! You can start modifying it and adding features."
+        },
+        {
+          "subheading": "Tips for Using Front-End Frameworks",
+          "text": "Here are some friendly tips to keep in mind when working with front-end frameworks:",
+          "key_points": [
+            "Read the Documentation: Each framework has guides and resources. Take your time to learn how to use them.",
+            "Organize Your Code: Keep your files tidy and well-structured.",
+            "Practice: The more you code, the better you'll become. Try building small projects.",
+            "Stay Curious: Technology changes quickly, so keep learning new things!"
+          ],
+          "additional_text": "By following these tips, you'll become a better developer and build amazing applications!"
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What is a front-end framework?",
+              "options": [
+                "A tool for making sandwiches.",
+                "A set of tools for building the user interface of a website.",
+                "A type of back-end technology.",
+                "A database system."
+              ],
+              "answer": "A set of tools for building the user interface of a website."
+            },
+            {
+              "question": "Which framework is known for its reusable components?",
+              "options": ["Angular", "React", "Vue.js", "All of the above"],
+              "answer": "React"
+            },
+            {
+              "question": "What do you use to create a new React app?",
+              "options": [
+                "npm install react-app",
+                "npx create-react-app",
+                "create-react",
+                "react start"
+              ],
+              "answer": "npx create-react-app"
+            }
+          ]
+        }
+      ]
+    
+  }
+  

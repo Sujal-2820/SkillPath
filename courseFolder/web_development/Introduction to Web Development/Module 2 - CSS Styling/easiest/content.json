@@ -1,0 +1,85 @@
+{
+    "title": "CSS for Beginners: Simple Ways to Style Your Web Pages",
+    "content": [
+      {
+        "subheading": "What is CSS?",
+        "text": "CSS, or Cascading Style Sheets, is a language used to style web pages. It allows you to change the look of your website without altering the HTML structure. With CSS, you can control colors, fonts, spacing, and the overall layout of your site. CSS makes your web pages visually appealing and helps you create a consistent style across your entire site.",
+        "code_example": "body {\n    background-color: #f0f0f0;\n    font-family: 'Verdana', sans-serif;\n}",
+        "additional_text": "In the code above, we set the background color of the entire page to a light gray and selected the Verdana font for the text. You can change the color and font to match your design preferences.",
+        "video_link": "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
+        "mcq_questions": [
+          {
+            "question": "What does CSS stand for?",
+            "options": [
+              "A) Creative Style Sheets",
+              "B) Cascading Style Sheets",
+              "C) Colorful Style Sheets",
+              "D) Computer Style Sheets"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "How to Select HTML Elements with CSS",
+        "text": "CSS uses selectors to apply styles to specific HTML elements. You can select elements by their type (like `h1` or `p`), by their class (like `.highlight`), or by their ID (like `#main-header`). This means you can easily style multiple elements in different ways.",
+        "code_example": "h1 {\n    color: blue;\n}\n\n.highlight {\n    background-color: yellow;\n    padding: 5px;\n}\n\n#main-header {\n    font-size: 30px;\n    text-align: center;\n}",
+        "additional_text": "In this example, all `<h1>` elements will have blue text. Any element with the class 'highlight' will have a yellow background and some padding around the text. The element with the ID 'main-header' will have a larger font size and centered text.",
+        "additional_code_example": "<h1 id=\"main-header\">Welcome to My Website!</h1>\n<p class=\"highlight\">This is important text.</p>",
+        "video_link": "https://www.youtube.com/watch?v=0afXusf7y3g",
+        "mcq_questions": [
+          {
+            "question": "Which selector targets all <h1> elements?",
+            "options": [
+              "A) .highlight",
+              "B) #main-header",
+              "C) h1",
+              "D) *"
+            ],
+            "correct_answer": "C"
+          }
+        ]
+      },
+      {
+        "subheading": "Understanding the CSS Box Model",
+        "text": "The CSS box model is a fundamental concept that describes how elements are structured on a web page. Each element can be thought of as a box with four layers: content, padding, border, and margin. Understanding this model is essential for controlling the layout and spacing of elements.",
+        "code_example": "div {\n    margin: 20px;\n    padding: 15px;\n    border: 2px solid black;\n    background-color: white;\n}",
+        "additional_text": "This code styles a `<div>` element by giving it a margin of 20 pixels outside the border, 15 pixels of padding inside the border, and a 2-pixel solid black border. The background color is set to white, creating a clear separation from the surrounding elements.",
+        "additional_code_example": "<div>\n    <p>This is content inside a box!</p>\n</div>",
+        "video_link": "https://www.youtube.com/watch?v=PK4xG8M1CjA",
+        "mcq_questions": [
+          {
+            "question": "What part of the box model creates space around an element?",
+            "options": [
+              "A) Padding",
+              "B) Margin",
+              "C) Border",
+              "D) Content"
+            ],
+            "correct_answer": "B"
+          }
+        ]
+      },
+      {
+        "subheading": "Making Your Web Design Responsive",
+        "text": "Responsive web design is all about making sure your website looks good on all devices, like computers, tablets, and smartphones. CSS media queries are used to apply different styles based on the screen size. This ensures your content is easy to read and navigate, no matter the device.",
+        "code_example": "@media (max-width: 600px) {\n    body {\n        background-color: lightblue;\n    }\n    h1 {\n        font-size: 24px;\n    }\n}",
+        "additional_text": "In this example, when the screen width is 600 pixels or less, the body background changes to light blue, and the font size of `<h1>` elements will decrease to 24 pixels. This helps improve the readability of your site on smaller screens.",
+        "additional_code_example": "<h1>This is a Responsive Heading</h1>\n<p>Resize your browser to see the changes!</p>",
+        "video_link": "https://www.youtube.com/watch?v=5A1LoA9dN9Y",
+        "mcq_questions": [
+          {
+            "question": "What do media queries do in CSS?",
+            "options": [
+              "A) They apply styles based on the device's width",
+              "B) They link stylesheets together",
+              "C) They create animations",
+              "D) They change the HTML content dynamically"
+            ],
+            "correct_answer": "A"
+          }
+        ]
+      }
+    ]
+  }
+  

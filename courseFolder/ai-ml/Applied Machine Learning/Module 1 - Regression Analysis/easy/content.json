@@ -1,0 +1,64 @@
+{
+  "module": "Regression Analysis",
+  "introduction": {
+    "text": "Regression analysis is a way to study how variables are related. In machine learning, regression is used to predict continuous outcomes, like prices, temperatures, or salaries based on input data."
+  },
+  "sections": [
+    {
+      "subheading": {
+        "title": "What is Linear Regression?",
+        "text": "Linear regression is the simplest type of regression. It finds a straight-line relationship between the input (independent variable) and output (dependent variable).",
+        "code_example": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Example data\nX = np.array([[1], [2], [3], [4]])\ny = np.array([2, 4, 6, 8])\n\n# Create and train the model\nmodel = LinearRegression().fit(X, y)\n\n# Make a prediction\npred = model.predict([[5]])\nprint(pred)",
+        "additional_text": "In this code, we create a linear regression model using the `sklearn` library. The model predicts the output for an input of 5 based on a straight-line relationship.",
+        "video_link": "https://www.youtube.com/watch?v=ZkjP5RJLQF4",
+        "quiz": {
+          "question": "What does Linear Regression model?",
+          "options": ["Non-linear relationships", "Straight-line relationships", "Clusters of data", "Time-series data"],
+          "correct_answer": "Straight-line relationships"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Multiple Linear Regression",
+        "text": "Multiple Linear Regression is used when there are two or more independent variables that predict the outcome.",
+        "code_example": "from sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Multiple variables data\nX = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])\ny = np.array([5, 7, 9, 11])\n\n# Create and train the model\nmodel = LinearRegression().fit(X, y)\n\n# Make a prediction\npred = model.predict([[5, 6]])\nprint(pred)",
+        "additional_text": "Here, we are using two variables to predict the output 'y'. The model tries to find how both variables together affect the result.",
+        "video_link": "https://www.youtube.com/watch?v=J_LnPL3Qg70",
+        "quiz": {
+          "question": "What is Multiple Linear Regression?",
+          "options": ["Regression with one independent variable", "Regression with many dependent variables", "Regression with multiple independent variables", "Regression with clusters of data"],
+          "correct_answer": "Regression with multiple independent variables"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Polynomial Regression",
+        "text": "When the relationship between the variables is not linear, we can use Polynomial Regression. It fits a curve instead of a straight line to the data.",
+        "code_example": "from sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\n\n# Example data\nX = np.array([[1], [2], [3], [4]])\ny = np.array([1, 8, 27, 64])\n\n# Convert to polynomial features\npoly = PolynomialFeatures(degree=3)\nX_poly = poly.fit_transform(X)\n\n# Create and train the model\nmodel = LinearRegression().fit(X_poly, y)\n\n# Make a prediction\npred = model.predict(poly.transform([[5]]))\nprint(pred)",
+        "additional_text": "This code fits a cubic (degree=3) polynomial to the data and predicts the value of 'y' for an input of 5. Polynomial regression is useful for more complex patterns.",
+        "video_link": "https://www.youtube.com/watch?v=ngF1o9pGxQo",
+        "quiz": {
+          "question": "What type of relationship does Polynomial Regression model?",
+          "options": ["Linear", "Non-linear", "Exponential", "Random"],
+          "correct_answer": "Non-linear"
+        }
+      }
+    },
+    {
+      "subheading": {
+        "title": "Ridge and Lasso Regression",
+        "text": "To avoid overfitting, we can use techniques like Ridge and Lasso regression. They add a penalty for large coefficients to make the model simpler and generalize better to new data.",
+        "code_example": "from sklearn.linear_model import Ridge\nimport numpy as np\n\n# Example data\nX = np.array([[1], [2], [3], [4]])\ny = np.array([2, 4, 6, 8])\n\n# Create and train Ridge regression model\nmodel = Ridge(alpha=0.5).fit(X, y)\n\n# Make a prediction\npred = model.predict([[5]])\nprint(pred)",
+        "additional_text": "Ridge regression adds a penalty based on the square of the coefficient values to make the model more robust and prevent overfitting.",
+        "video_link": "https://www.youtube.com/watch?v=Q81RR3yKn30",
+        "quiz": {
+          "question": "What is the goal of Ridge and Lasso regression?",
+          "options": ["Increase model complexity", "Prevent overfitting", "Improve accuracy on training data", "Reduce number of variables"],
+          "correct_answer": "Prevent overfitting"
+        }
+      }
+    }
+  ]
+}

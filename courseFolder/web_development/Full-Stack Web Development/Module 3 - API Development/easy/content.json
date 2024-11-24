@@ -1,0 +1,112 @@
+{
+      "title": "API Development: Creating Simple RESTful APIs",
+      "description": "In this module, you will learn how to create simple RESTful APIs using Node.js and Express.js. REST (Representational State Transfer) is a popular way to build web services. This module will guide you through the basics of REST, setting up your environment, and creating your first API.",
+      "video_link": "https://www.youtube.com/watch?v=G1rKml4H7Zw",
+      "content": [
+        {
+          "subheading": "What is an API?",
+          "text": "An API (Application Programming Interface) allows different software applications to talk to each other. It acts as a bridge between your frontend (what users see) and your backend (server logic and database).",
+          "additional_text": "APIs make it possible for your web application to interact with other applications or services."
+        },
+        {
+          "subheading": "Understanding REST",
+          "text": "REST APIs use standard HTTP methods to perform actions. Here are some important terms:",
+          "key_points": [
+            "GET: Retrieve data (e.g., get a list of users).",
+            "POST: Create new data (e.g., add a new user).",
+            "PUT: Update existing data (e.g., update user information).",
+            "DELETE: Remove data (e.g., delete a user)."
+          ],
+          "more_additional_text": "These methods help you manage resources in a RESTful way."
+        },
+        {
+          "subheading": "Setting Up Your Project",
+          "text": "To create your API, you need to set up your environment. Follow these steps:",
+          "steps": [
+            {
+              "step": "Create a new folder for your project:",
+              "code_example": "mkdir my-simple-api && cd my-simple-api"
+            },
+            {
+              "step": "Initialize a Node.js project:",
+              "code_example": "npm init -y",
+              "description": "This command creates a file called `package.json`."
+            },
+            {
+              "step": "Install Express.js:",
+              "code_example": "npm install express",
+              "description": "Express.js is a web framework for building APIs."
+            }
+          ],
+          "additional_text": "This setup gives you a clean starting point for your API development."
+        },
+        {
+          "subheading": "Creating Your First API",
+          "text": "Now, let's write some code to create a simple API. Create a file named `app.js` and add the following code:",
+          "code_example": [
+            "const express = require('express');",
+            "const app = express();",
+            "const PORT = 3000;",
+            "",
+            "app.use(express.json());",
+            "",
+            "// Sample data",
+            "let users = [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }];",
+            "",
+            "// Get all users",
+            "app.get('/api/users', (req, res) => {",
+            "  res.json(users);",
+            "});",
+            "",
+            "// Create a new user",
+            "app.post('/api/users', (req, res) => {",
+            "  const newUser = { id: users.length + 1, name: req.body.name };",
+            "  users.push(newUser);",
+            "  res.status(201).json(newUser);",
+            "});",
+            "",
+            "// Start the server",
+            "app.listen(PORT, () => {",
+            "  console.log(`Server running on port ${PORT}`);",
+            "});"
+          ],
+          "additional_text": "This code creates a simple API that can get users and add new users."
+        },
+        {
+          "subheading": "Testing Your API",
+          "text": "You can use tools like Postman or Insomnia to test your API. Here’s how to test it:",
+          "key_points": [
+            "GET /api/users: This will return the list of users.",
+            "POST /api/users: You can add a new user by sending a JSON object in the body. Example: { 'name': 'New User' }."
+          ],
+          "more_additional_text": "Testing helps ensure your API is working as expected."
+        },
+        {
+          "subheading": "Handling Errors",
+          "text": "It's important to handle errors in your API. You can add error handling for routes that don't exist. Here’s how:",
+          "code_example": "app.use((req, res) => {\n  res.status(404).send('Route not found');\n});",
+          "additional_text": "This will return a 404 error for any undefined routes."
+        },
+        {
+          "subheading": "Quiz Questions",
+          "quiz": [
+            {
+              "question": "What does REST stand for?",
+              "options": ["Realistic State Transfer", "Representational State Transfer", "Remote State Transfer", "Resource State Transfer"],
+              "answer": "Representational State Transfer"
+            },
+            {
+              "question": "Which HTTP method is used to get data?",
+              "options": ["GET", "POST", "PUT", "DELETE"],
+              "answer": "GET"
+            },
+            {
+              "question": "What status code indicates a successful resource creation?",
+              "options": ["200", "201", "404", "500"],
+              "answer": "201"
+            }
+          ]
+        }
+      ]
+  }
+  
