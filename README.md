@@ -154,6 +154,7 @@ Raising an "issue" first would increase the chances of your pull request being n
 For any inquiries, please reach out to:
 
 Email: sujal99ds@gmail.com
+<br/>
 GitHub: https://github.com/Sujal-2820
 
 
