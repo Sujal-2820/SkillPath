@@ -146,6 +146,8 @@ To deploy the application, follow these steps:
 
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
+<br/>
+#### NOTE
 Raising an "issue" first would increase the chances of your pull request being noticed.
 
 ---
