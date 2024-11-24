@@ -41,25 +41,25 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
 ## Screenshots
 
 ### Onboarding Flow
-<img src="img/readme/onboarding1.png" alt="Onboarding Flow1" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/onboarding1.png" alt="Onboarding Flow1" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-<img src="img/readme/onboarding2.png" alt="Onboarding Flow2" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/onboarding2.png" alt="Onboarding Flow2" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-<img src="img/readme/onboarding3.png" alt="Onboarding Flow3" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/onboarding3.png" alt="Onboarding Flow3" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
 ### Course Recommendation
-<img src="img/readme/course-recommendation.png" alt="Course Recommendation" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/course-recommendation.png" alt="Course Recommendation" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
 ### Module Progress and Feedback
-<img src="img/readme/module-list2.png" alt="Module Progress" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/module-list2.png" alt="Module Progress" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
 ### Module Images
-<img src="img/readme/module.png" alt="Module Image1" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/module.png" alt="Module Image1" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-<img src="img/readme/module2.png" alt="Module Image2" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
+<img src="img/readme/module2.png" alt="Module Image2" style="border: 3px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 
 
 ---
