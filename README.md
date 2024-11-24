@@ -165,12 +165,15 @@ To deploy the application, follow these steps:
 Contributions are welcome! Please fork the repository and create a pull request.
 Visit **<code><a href="https://github.com/Sujal-2820/SkillPath/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a></code>** for reference.
 
-<br/>
-#### NOTE
+---
+
+### NOTE
    - Raising an "issue" first would increase the chances of your pull request being noticed.
    - You can raise an issue to ask for .env.local file as it holds the necessary credentials for Firebase.
    - The project requires a ```secret``` file in order to fetch the content from "Cloud Storage" of "Google Cloud Platform". This shall be provided to you if asked for the same.
-<br/>
+
+---
+
 ### Scope of Contribution
    - This project particularly seeks improvement in the JSON content inside each file of ```courseFolder```. The JSON forms the basis of module data that is presented inside a particular course 📝.
    - If you are someone who has got a good knowledge of Next JS, you are free to raise an issue and eventually a pull request of your solution/modifications to the code which could enhance the UI of the project 🌄
