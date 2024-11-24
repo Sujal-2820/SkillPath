@@ -124,6 +124,7 @@ To deploy the application, follow these steps:
 
 3. Alternatively, deploy to a cloud hosting service such as Vercel or Firebase Hosting.
 
+
 ---
 
 ## Project Structure
@@ -146,6 +147,7 @@ To deploy the application, follow these steps:
    - styles/: CSS modules for styling.
    - utils/: Utility functions.
 
+
 ---
 
 ### Commands
@@ -156,13 +158,22 @@ To deploy the application, follow these steps:
 | npm run build | Builds the application for production.   |
 | npm run start | Runs the application in production mode. |
 
+
 ---
 
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
 <br/>
 #### NOTE
-Raising an "issue" first would increase the chances of your pull request being noticed.
+   - Raising an "issue" first would increase the chances of your pull request being noticed.
+   - You can raise an issue to ask for .env.local file as it holds the necessary credentials for Firebase.
+   - The project requires a ```secret``` file in order to fetch the content from "Cloud Storage" of "Google Cloud Platform". This shall be provided to you if asked for the same.
+<br/>
+### Scope of Contribution
+   - This project particularly seeks improvement in the JSON content inside each file of ```courseFolder```. The JSON forms the basis of module data that is presented inside a particular course 📝.
+   - If you are someone who has got a good knowledge of Next JS, you are free to raise an issue and eventually a pull request of your solution/modifications to the code which could enhance the UI of the project 🌄
+   - Even your smallest contribution counts. You will be credited inside both the project as well as in the repository 🧑🏻‍💻.
+
 
 ---
 
@@ -172,7 +183,5 @@ For any inquiries, please reach out to:
 Email: sujal99ds@gmail.com
 <br/>
 GitHub: https://github.com/Sujal-2820
-
-
-
-
+<br/>
+LinkedIn: https://www.linkedin.com/in/sujal-soni/
