@@ -27,7 +27,7 @@ yarn-error.log*
 
 # local env files
 .env.local
-SkillPath/skillpath/projects/630850232432/secrets/deft-striker-438114-i6-ae338944fd27.json
+SkillPath\skillpath\src\app\api\fetchContent\route.js
 
 
 # vercel
