@@ -41,26 +41,25 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
 ## Screenshots
 
 ### Onboarding Flow
-![Onboarding Flow1](img/readme/onboarding1.png)
+<img src="img/readme/onboarding1.png" alt="Onboarding Flow1" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-![Onboarding Flow2](img/readme/onboarding2.png)
+<img src="img/readme/onboarding2.png" alt="Onboarding Flow2" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-![Onboarding Flow3](img/readme/onboarding3.png)
+<img src="img/readme/onboarding3.png" alt="Onboarding Flow3" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
-
 ### Course Recommendation
-![Course Recommendation](img/readme/course-recommendation.png)
+<img src="img/readme/course-recommendation.png" alt="Course Recommendation" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
 ### Module Progress and Feedback
-![Module Progress](img/readme/module-list2.png)
+<img src="img/readme/module-list2.png" alt="Module Progress" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/><br/>
 
 ### Module Images
-![Module Image1](img/readme/module.png)
+<img src="img/readme/module.png" alt="Module Image1" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 <br/>
-![Module Image2](img/readme/module2.png)
+<img src="img/readme/module2.png" alt="Module Image2" style="border: 2px solid #000; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);"/>
 
 
 ---
