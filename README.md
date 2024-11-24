@@ -51,3 +51,8 @@ A personalized learning platform that tailors courses to users based on their sk
    git clone https://github.com/your-repo-name.git
    cd your-repo-name
    ```
+
+2.Install dependencies:
+```bash
+npm install
+```
