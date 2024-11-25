@@ -16,7 +16,7 @@
 
 5) **Go into your local repo directory**
 
-   `cd Hacktoberfest-Web`
+   `cd SkillPath`
 
 6) **Create a branch**
 
