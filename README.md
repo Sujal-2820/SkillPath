@@ -74,18 +74,20 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
 
 ### Installation Steps
 
-1. Clone the repository:
+1. Fork this repository.
+
+2. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name.git
+   git clone https://github.com/SkillPath.git
    cd your-repo-name
    ```
 
-2. Install dependencies:
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Set up environment variables:
+4. Set up environment variables:
    - Create a `.env.local` file in the root directory.
    - Add Firebase configuration:
      ```makefile
@@ -97,12 +99,12 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
      NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
      ```
 
-4. Run the development server:
+5. Run the development server:
      ```bash
      npm run dev
      ```
 
-5. Open your browser and navigate to:
+6. Open your browser and navigate to:
      ```bash
      http://localhost:3000
      ```
