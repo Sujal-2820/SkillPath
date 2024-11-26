@@ -166,7 +166,7 @@ To deploy the application, follow these steps:
 ### Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
 <br/>
-Visit **<code><a href="https://github.com/Sujal-2820/SkillPath/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a></code>** for reference.
+Check out **<code><a href="https://github.com/Sujal-2820/SkillPath/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a></code>** for a comprehensive guide on the contribution process.
 
 ---
 
