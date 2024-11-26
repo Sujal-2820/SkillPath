@@ -130,7 +130,7 @@ Contributing to JSON means you need to make sure that it follows the specified p
 <br/><br/>
 ### TIP
 You can take help of any AI tool to collect the content, but make sure that whatever content is being generated, it resonates with the particular ***module topic*** and the content to be written inside the above mentioned structure only.
-<br/>
+<br/><br/>
 **If you fail to meet this criteria, your PR shall not be accepted and I might ask you to perform necessary changes. Therefore check your work thoroughly before making a PR**.
 <br/><br/>
 Make it count 🚀
