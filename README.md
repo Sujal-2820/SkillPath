@@ -144,7 +144,7 @@ To deploy the application, follow these steps:
 
 ### Inside src folder:
    - components/: Contains reusable React components.
-   - pages/: Next.js pages for routing.
+   - page.js/: This project uses App Router to arrange each page code inside page.js file.
    - public/: Static assets like images and files.
    - styles/: CSS modules for styling.
    - utils/: Utility functions.
@@ -173,7 +173,7 @@ Check out **<code><a href="https://github.com/Sujal-2820/SkillPath/blob/main/CON
 ### NOTE
    - Raising an "issue" first would increase the chances of your pull request being noticed.
    - You can raise an issue to ask for .env.local file as it holds the necessary credentials for Firebase.
-   - The project requires a ```secret``` file in order to fetch the content from "Cloud Storage" of "Google Cloud Platform". This shall be provided to you if asked for the same.
+   - The project requires a ```secret``` file (apart from ```.env.local```) in order to fetch the content from "Cloud Storage" of "Google Cloud Platform". This shall be provided to you if asked for the same.
 
 ---
 
