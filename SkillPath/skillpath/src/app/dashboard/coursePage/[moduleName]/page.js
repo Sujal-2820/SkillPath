@@ -1,3 +1,5 @@
+// dashboard/coursePage/[moduleName]/page.js
+
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -44,12 +46,6 @@ export default function ModulePage() {
         const data = await response.json();
         if (data && Array.isArray(data.content)) {
           setModuleData(data);
-
-           // Check if there are no quiz questions
-           const hasQuizQuestions = data.content.some(section => section.mcq_questions?.length > 0);
-           if (!hasQuizQuestions) {
-             setShowReview(true); // Directly show review if no quiz questions are present
-           }
           
           // Initialize refs for each section
           data.content.forEach((section, index) => {
@@ -134,10 +130,7 @@ const handleNextModule = async () => {
   if (!review) {
     setShowWarning(true);
   } else {
-    const result = allMCQsAttempted
-      ? ScoreCalculator({ selectedQuizAnswers, moduleData })
-      : "averageOrAboveAverageScore"; // Default score when MCQs don't exist
-
+    const result = ScoreCalculator({ selectedQuizAnswers, moduleData });
     setScoreResult(result);
 
     const nextModuleAction = NextModuleInference({ score: result, Review: review, difficulty: module_difficulty });
@@ -179,7 +172,7 @@ const handleNextModule = async () => {
       console.log("Error: unlockedModules array is empty.");
       // Handle empty array case if necessary
     } else {
-      console.log(`Error: Module "${module_name}" not found in unlockedModules.`);
+      console.log(`Error: Module ${module_name} not found in unlockedModules.`);
       // Optional: log available module names for troubleshooting
       console.log("Available modules:", courseDetailsData.unlockedModules.map(mod => mod.name));
       // Additional fallback or error handling logic can go here
@@ -198,7 +191,7 @@ const handleNextModule = async () => {
         ...updatedUnlockedModules[currentModuleIndex],
         isComplete: true, // Mark as complete
       };
-      console.log(`Updated unlockedModules at index ${currentModuleIndex}:`, updatedUnlockedModules);
+      console.log(`Updated unlockedModules at index ${currentModuleIndex}: `, updatedUnlockedModules);
 
     
       // Retrieve the next module from lockedModules to unlock
@@ -270,15 +263,14 @@ const handleNextModule = async () => {
       setPopupVisible(true);
     
       // Redirect to the updated module page with the new difficulty
-      router.push(`
-        /dashboard/coursePage/${updatedUnlockedModules[currentModuleIndex].name}?domain=${domain_name}&course=${course_name}&module=${updatedUnlockedModules[currentModuleIndex].name}&difficulty=${newDifficulty}
-      `);
+      router.push(
+        `/dashboard/coursePage/${updatedUnlockedModules[currentModuleIndex].name}?domain=${domain_name}&course=${course_name}&module=${updatedUnlockedModules[currentModuleIndex].name}&difficulty=${newDifficulty}`
+      );
     } 
 
     console.log("Navigating to next module");
   }
 };
-  
 
 const handlePopupClose = () => {
   setPopupVisible(false);
@@ -303,8 +295,7 @@ const handlePopupClose = () => {
           </div>
           <button
             onClick={handleBookmark}
-            className={`p-2 rounded-full ${bookmarked ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'} hover:bg-blue-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600`}
-          >
+            className={`p-2 rounded-full ${bookmarked ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'} hover:bg-blue-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600`}>
             <BookmarkIcon className="h-6 w-6" />
           </button>
         </div>
@@ -338,37 +329,27 @@ const handlePopupClose = () => {
               </div>
 
               {section.code_example && (
-  <div className="bg-gray-800 rounded-lg p-4 mb-6">
-    {Array.isArray(section.code_example) ? (
-      // If code_example is an array of strings
-      typeof section.code_example[0] === "string" ? (
-        section.code_example.map((line, lineIndex) => (
-          <pre key={lineIndex} className="text-white overflow-x-auto">
-            <code>{line}</code>
-          </pre>
-        ))
-      ) : (
-        // If code_example is an array of objects
-        section.code_example.map((file, fileIndex) => (
-          <div key={fileIndex} className="mb-4">
-            <h3 className="text-lg font-medium text-gray-200 mb-2">{file.filename}</h3>
-            <pre className="text-white overflow-x-auto">
-              <code>{file.code}</code>
-            </pre>
-          </div>
-        ))
-      )
-    ) : (
-      // If code_example is a string
-      <pre className="text-white overflow-x-auto">
-        <code>{section.code_example}</code>
-      </pre>
-    )}
-  </div>
-)}
+                <div className="bg-gray-800 rounded-lg p-4 mb-6">
+                  {Array.isArray(section.code_example) ? (
+                    // If code_example is an array of objects
+                    section.code_example.map((file, fileIndex) => (
+                      <div key={fileIndex} className="mb-4">
+                        <h3 className="text-lg font-medium text-gray-200 mb-2">{file.filename}</h3>
+                        <pre className="text-white overflow-x-auto">
+                          <code>{file.code}</code>
+                        </pre>
+                      </div>
+                    ))
+                  ) : (
+                    // If code_example is a string
+                    <pre className="text-white overflow-x-auto">
+                      <code>{section.code_example}</code>
+                    </pre>
+                  )}
+                </div>
+              )}
 
-
-              {section.video_link && typeof section.video_link === 'string' && (
+              {section.video_link && (
                 <div className="mb-6">
                   <h3 className="text-lg font-medium mb-2 text-gray-900 dark:text-white">Video Tutorial</h3>
                   <div className="aspect-w-16 aspect-h-9">
@@ -427,78 +408,8 @@ const handlePopupClose = () => {
                   )}
                 </div>
               ))}
-
-              {/* Render key points as a fallback */}
-          {section.key_points && section.key_points.length > 0 && (
-            <ul>
-              {section.key_points.map((point, idx) => (
-                <li key={idx}>
-                  {/* Render category if it exists */}
-                  {point.category && <strong>{point.category}:</strong>}
-                  {/* Render technologies only if available */}
-                  {point.technologies && point.technologies.length > 0 && (
-                    <ul>
-                      {point.technologies.map((tech, techIndex) => (
-                        <li key={techIndex}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
-
-              {/* Steps */}
-              {section.steps && (
-                <ol className="list-decimal pl-6 space-y-4">
-                  {section.steps.map((step, idx) => (
-                    <li key={idx}>
-                      <p className="font-semibold text-gray-900 dark:text-white mb-1">
-                        {step.step}
-                      </p>
-                      {step.description && (
-                        <p className="text-gray-700 dark:text-gray-300 mb-2">
-                          {step.description}
-                        </p>
-                      )}
-                      {step.code_example && (
-                        <pre className="bg-gray-800 text-white p-3 rounded mb-2">
-                          <code>{step.code_example}</code>
-                        </pre>
-                      )}
-                      {step.additional_text && (
-                        <p className="text-gray-600 dark:text-gray-400">
-                          {step.additional_text}
-                        </p>
-                      )}
-                    </li>
-                  ))}
-                </ol>
-              )}
             </div>
           ))}
-
-          
-
-        {/* Conclusion */}
-        {moduleData?.content?.some((section) => section.key_points) && (
-          <section className="my-8">
-            <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
-              Conclusion
-            </h2>
-            <ul className="list-disc pl-6 space-y-1">
-              {moduleData.content
-                .filter((section) => section.key_points)
-                .map((section, idx) =>
-                  section.key_points.map((point, subIdx) => (
-                    <li key={`${idx}-${subIdx}`} className="text-gray-700 dark:text-gray-300">
-                      {point}
-                    </li>
-                  ))
-                )}
-            </ul>
-          </section>
-        )}
 
 
           {showReview && (
@@ -523,7 +434,7 @@ const handlePopupClose = () => {
             <div className="bg-white dark:bg-gray-800 rounded shadow-lg p-6 max-w-sm">
               <h4 className="font-bold text-lg text-gray-900 dark:text-white">Notice</h4>
               <p className="mt-2 text-gray-700 dark:text-gray-300">
-                Based on your answers and review, we shall be providing you an easier level module before moving on...
+                Based on your answers and review, we shall be getting you an easier level module before moving on...
               </p>
               <div className="mt-4 flex justify-end">
                 <button
