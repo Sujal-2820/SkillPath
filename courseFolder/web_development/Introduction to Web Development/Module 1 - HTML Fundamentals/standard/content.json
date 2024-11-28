@@ -5,7 +5,7 @@
         "subheading": "What is HTML?",
         "text": "HTML is the backbone of web pages. It structures the content on the web, from text to images and videos. HTML elements tell the browser how to display content on the page. HTML files are simple text files that contain HTML tags, enclosed in angle brackets (e.g., <p>, <h1>).",
         "code_example": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Web Page</title>\n</head>\n<body>\n    <h1>Welcome to My Website</h1>\n    <p>This is a simple paragraph.</p>\n</body>\n</html>",
-        "video_link": "https://www.youtube.com/watch?v=qz0aGYrrlhU",
+        "video_link": "https://www.youtube.com/embed/BzYMFd-lQL4?si=PgxXGtaEaMcsisyC",
         "mcq_questions": [
           {
             "question": "Which tag is used to define the most important heading on a page?",
