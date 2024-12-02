@@ -26,7 +26,7 @@ export default function Home() {
             <Link href="#pricing" className="hover:text-gray-600 transition-colors">
               Pricing
             </Link>
-            <Link href="#about" className="hover:text-gray-600 transition-colors">
+            <Link href="/about" className="hover:text-gray-600 transition-colors">
               About
             </Link>
           </div>
