@@ -4,19 +4,21 @@ import { Storage } from '@google-cloud/storage';
 import { NextResponse } from 'next/server';
 
 
-const credentials = JSON.parse(
-  Buffer.from(process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64 ? process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64 : "", "base64").toString()
-);
+// Decode the base64-encoded credentials
+const credentialsBase64 = process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64;
 
+if (!credentialsBase64) {
+  throw new Error('Missing environment variable: NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64');
+}
+
+const credentials = JSON.parse(Buffer.from(credentialsBase64, 'base64').toString('utf-8'));
 
 // Initialize the Google Cloud Storage client
 const storage = new Storage({
   projectId: process.env.NEXT_PUBLIC_GOOGLE_CLOUD_PROJECT,
-  credentials: {
-    client_email: credentials.client_email,
-    private_key: credentials.private_key
-  }
+  credentials: credentials,
 });
+
 
 export async function GET(request) {
   const bucketName = process.env.NEXT_PUBLIC_GOOGLE_CLOUD_BUCKET;
