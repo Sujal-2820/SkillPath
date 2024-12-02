@@ -3,13 +3,22 @@
 import { Storage } from '@google-cloud/storage';
 import { NextResponse } from 'next/server';
 
-const credential = JSON.parse(process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS);
+
+const credential = process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS
+  ? JSON.parse(process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS)
+  : null;
+
+
+if (!credential) {
+  throw new Error('Google Cloud credentials are missing or invalid.');
+}
+
 // Initialize the Google Cloud Storage client
 const storage = new Storage({
   projectId: process.env.NEXT_PUBLIC_GOOGLE_CLOUD_PROJECT,
   credentials: {
     client_email: credential.client_email,
-    private_key: credential.private_key,
+    private_key: credential.private_key.replace(/\\n/g, '\n'), // Ensure private key formatting
   },
 });
 
