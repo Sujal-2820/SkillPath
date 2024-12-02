@@ -5,10 +5,10 @@ import { NextResponse } from 'next/server';
 
 
 // Decode the base64-encoded credentials
-const credentialsBase64 = process.env.NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64;
+const credentialsBase64 = process.env.GOOGLE_APPLICATION_CREDENTIALS_BASE64;
 
 if (!credentialsBase64) {
-  throw new Error('Missing environment variable: NEXT_PUBLIC_GOOGLE_APPLICATION_CREDENTIALS_BASE64');
+  throw new Error('Missing environment variable: GOOGLE_APPLICATION_CREDENTIALS_BASE64');
 }
 
 const credentials = JSON.parse(Buffer.from(credentialsBase64, 'base64').toString('utf-8'));
