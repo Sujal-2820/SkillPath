@@ -28,7 +28,13 @@ export default function About() {
             <div className="flex-1">
               <h3 className="text-xl font-semibold mb-2">John Doe</h3>
               <p className="text-gray-300 leading-relaxed">
-                John is a passionate full-stack developer with a keen interest in creating intuitive and efficient web applications. With over 5 years of experience in the industry, he specializes in React, Node.js, and cloud technologies. When not coding, John enjoys hiking and playing the guitar.
+                  Sujal Soni is a final-year Computer Science Engineering student at Medi-Caps University with a passion for full-stack web development. With hands-on experience in modern technologies like React.js, Next.js, Node.js, MongoDB, and Firebase, Sujal has consistently demonstrated his ability to create scalable and user-centric web applications 🌐.
+                  <br/>
+                  He has successfully delivered impactful projects, such as EventSphere, a dynamic event management platform, and EstateVerse, a real estate app focused on special offers. His technical expertise extends to implementing secure payment gateways using Razorpay and leveraging Google Cloud services like Firebase Authentication, Firestore, and Google Places API for enhanced functionality and seamless user experiences 🧑🏻‍💻
+                  <br/>
+                  Sujal’s professional journey includes internships at NotesEra and Indo-Tech, where he contributed to building robust front-end and full-stack solutions, optimizing performance, and enhancing user engagement. Beyond his technical skills, Sujal has been an active contributor to the open-source community as a GDSC Open Source Mentor and Hacktoberfest Top Contributor 🗒️
+                 <br/>
+                  With strong communication, teamwork, and management skills, Sujal excels in collaborative environments and thrives on tackling challenges with innovative solutions. His forward-thinking mindset and dedication to learning make him a valuable asset to any team.
               </p>
             </div>
           </div>
