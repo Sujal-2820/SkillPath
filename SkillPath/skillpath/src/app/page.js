@@ -51,7 +51,7 @@ export default function Home() {
               <Link href="/pricing" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 Pricing
               </Link>
-              <Link href=/about" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
+              <Link href="/about" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 About
               </Link>
               <Link href="/signin" className="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors" onClick={toggleMobileMenu}>
