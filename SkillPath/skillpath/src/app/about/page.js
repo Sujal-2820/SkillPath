@@ -49,7 +49,7 @@ export default function About() {
 
             <h3>Github Repository Link</h3>
             <a href="https://github.com/Sujal-2820/SkillPath" className="text-blue-400 hover:underline">https://github.com/Sujal-2820/SkillPath</a>
-            <br/>
+            <br/><br/>
 
             <h3 className="text-xl font-semibold mb-4">Key Features</h3>
             <ul className="list-disc list-inside text-gray-300 leading-relaxed mb-6">
