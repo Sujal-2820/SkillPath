@@ -48,7 +48,7 @@ export default function Home() {
               <Link href="/dashboard" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 Dashboard
               </Link>
-              <Link href="#pricing" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
+              <Link href="/pricing" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 Pricing
               </Link>
               <Link href=/about" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
