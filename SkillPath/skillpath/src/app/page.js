@@ -45,16 +45,16 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white py-4 px-4 shadow-lg">
             <div className="flex flex-col space-y-4">
-              <Link href="#features" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
-                Features
+              <Link href="/dashboard" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
+                Dashboard
               </Link>
               <Link href="#pricing" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 Pricing
               </Link>
-              <Link href="#about" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
+              <Link href=/about" className="hover:text-gray-600 transition-colors" onClick={toggleMobileMenu}>
                 About
               </Link>
-              <Link href="/login" className="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors" onClick={toggleMobileMenu}>
+              <Link href="/signin" className="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors" onClick={toggleMobileMenu}>
                 Log in
               </Link>
               <Link href="/signup" className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors" onClick={toggleMobileMenu}>
@@ -74,7 +74,7 @@ export default function Home() {
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               SkillPath provides curated learning paths to help you achieve your goals faster and more efficiently.
             </p>
-            <Link href="/get-started" className="inline-flex items-center px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+            <Link href="/dashboard" className="inline-flex items-center px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
