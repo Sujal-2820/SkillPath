@@ -12,6 +12,8 @@ import { doc, arrayUnion, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../../../../../firebase";
 import { useDashboard } from '../../DashboardContext';
 import { useRouter } from "next/navigation";
+import Footer from '../../../components/dashboard/Footer';
+
 
 
 export default function ModulePage() {
@@ -470,6 +472,7 @@ const handlePopupClose = () => {
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   );
 }
