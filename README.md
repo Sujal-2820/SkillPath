@@ -20,6 +20,11 @@ With strong communication, teamwork, and management skills, Sujal excels in coll
 
 ---
 
+## View Live Project
+https://skill-path.vercel.app
+
+---
+
 ## Key Features
 
 - **Dynamic Course Recommendations**: Suggests courses based on user answers during onboarding.
