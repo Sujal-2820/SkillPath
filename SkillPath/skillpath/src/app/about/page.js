@@ -26,7 +26,7 @@ export default function About() {
               />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-2">John Doe</h3>
+              <h3 className="text-xl font-semibold mb-2">Sujal Soni</h3>
               <p className="text-gray-300 leading-relaxed">
                   Sujal Soni is a final-year Computer Science Engineering student at Medi-Caps University with a passion for full-stack web development. With hands-on experience in modern technologies like React.js, Next.js, Node.js, MongoDB, and Firebase, Sujal has consistently demonstrated his ability to create scalable and user-centric web applications 🌐.
                   <br/>
