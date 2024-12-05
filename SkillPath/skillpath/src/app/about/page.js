@@ -64,7 +64,7 @@ export default function About() {
               <li>Frontend: <a href="https://nextjs.org/" className="text-blue-400 hover:underline">Next.js</a> - A React framework for building fast, scalable web applications.</li>
               <li>Backend & Database: <a href="https://firebase.google.com/docs/firestore" className="text-blue-400 hover:underline">Firebase Firestore</a> - NoSQL database for real-time data storage and retrieval.</li>
               <li>Authentication: <a href="https://firebase.google.com/docs/auth" className="text-blue-400 hover:underline">Firebase Authentication</a> - Secure Google Sign-In for user authentication.</li>
-              <li>Storage: <a href="https://cloud.google.com/storage" className="text-blue-400 hover:underline">Google Cloud Storage</a> - Handles image and file uploads for the platform.</li>
+              <li>Storage: <a href="https://cloud.google.com/storage" className="text-blue-400 hover:underline">Google Cloud Storage</a> - Handles image and file downloads from the platform.</li>
             </ul>
           </div>
         </section>
