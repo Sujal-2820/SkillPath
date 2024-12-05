@@ -32,10 +32,10 @@ export default function Home() {
           </div>
           <div className="hidden md:flex space-x-4">
             <Link href="/signin" className="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">
-              Log in
+              Log In
             </Link>
             <Link href="/signup" className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
-              Sign up
+              Sign Up
             </Link>
           </div>
           <button className="md:hidden" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
@@ -55,10 +55,10 @@ export default function Home() {
                 About
               </Link>
               <Link href="/signin" className="px-4 py-2 rounded-md hover:bg-gray-100 transition-colors" onClick={toggleMobileMenu}>
-                Log in
+                Log In
               </Link>
               <Link href="/signup" className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors" onClick={toggleMobileMenu}>
-                Sign up
+                Sign Up
               </Link>
             </div>
           </div>
