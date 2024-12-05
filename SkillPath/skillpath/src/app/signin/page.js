@@ -1,11 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Mail, X } from 'lucide-react'
+import { ArrowLeft, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { db } from '../../../firebase';
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 
 export default function SignIn() {
@@ -60,6 +58,13 @@ export default function SignIn() {
 
       {/* Right column / Mobile full width */}
       <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-20 xl:px-24">
+        <Link 
+            href="/" 
+            className="absolute top-4 right-4 md:top-8 md:right-8 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to home
+        </Link>
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="text-center mb-8">
             <Link href="/" className="text-3xl font-bold text-black">
