@@ -292,7 +292,7 @@ const ProfileSettings = () => {
                   name="city"
                   value={user.location.city}
                   onChange={(e) => handleChange(e, 'location')}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                 />
               </div>
               <div>
@@ -302,7 +302,7 @@ const ProfileSettings = () => {
                   name="country"
                   value={user.location.country}
                   onChange={(e) => handleChange(e, 'location')}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                 />
               </div>
               <div>
