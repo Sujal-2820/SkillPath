@@ -180,7 +180,7 @@ const ProfileSettings = () => {
                   name="name"
                   value={user.name}
                   onChange={(e) => handleChange(e, 'name')}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                 />
               </div>
               <div>
@@ -190,7 +190,7 @@ const ProfileSettings = () => {
                   name="email"
                   value={user.email}
                   onChange={(e) => handleChange(e, 'email')}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                 />
               </div>
               <div>
@@ -276,7 +276,7 @@ const ProfileSettings = () => {
                     name={platform}
                     value={link}
                     onChange={(e) => handleChange(e, 'socialLinks')}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                     placeholder={`https://${platform}.com/yourusername`}
                   />
                 </div>
