@@ -398,7 +398,7 @@ const ProfileSettings = () => {
                     value={newInterest}
                     onChange={(e) => setNewInterest(e.target.value)}
                     placeholder="Add a new interest"
-                    className="flex-grow rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                    className="flex-grow rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
                   />
                   <button onClick={addInterest} className="bg-black text-white p-2 rounded-md">
                     <Plus size={20} />
@@ -437,7 +437,7 @@ const ProfileSettings = () => {
                     type={showPassword ? 'text' : 'password'}
                     value={user.password}
                     onChange={(e) => setUser(prevUser => ({ ...prevUser, password: e.target.value }))}
-                    className="block w-full pr-10 rounded-md border-gray-300 focus:border-black focus:ring-black h-12"
+                    className="block w-full pr-10 rounded-md border-gray-300 focus:border-black focus:ring-black h-12 text-black"
                   />
                   <button
                     type="button"
@@ -494,14 +494,14 @@ const ProfileSettings = () => {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 placeholder="New Password"
-                className="block w-full mt-2 rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                className="block w-full mt-2 rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
               />
               <input
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm New Password"
-                className="block w-full mt-2 rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12"
+                className="block w-full mt-2 rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black h-12 text-black"
               />
               <div className="mt-4 flex justify-end space-x-2">
                 <button
