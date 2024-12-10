@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { db } from '../../../firebase';
 import { doc, setDoc } from 'firebase/firestore'; 
 
 export default function SignUp() {
