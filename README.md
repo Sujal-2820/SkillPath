@@ -4,7 +4,9 @@
 
 A personalized learning platform that tailors courses to users based on their skillset preferences and onboarding responses. The application dynamically adjusts module difficulty based on user performance, ensuring a structured and effective learning experience.
 
+
 ---
+
 
 ## Project Owner
    ### Sujal Soni
