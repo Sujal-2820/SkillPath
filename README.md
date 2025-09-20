@@ -20,7 +20,7 @@ Sujal’s professional journey includes internships at NotesEra and Indo-Tech, w
 
 With strong communication, teamwork, and management skills, Sujal excels in collaborative environments and thrives on tackling challenges with innovative solutions. His forward-thinking mindset and dedication to learning make him a valuable asset to any team.
 
----
+---  
 
 ## View Live Project
 https://skill-path.vercel.app
